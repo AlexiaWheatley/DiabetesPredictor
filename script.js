@@ -208,3 +208,62 @@ document.addEventListener('keydown', function(event) {
         closeRecommendations();
     }
 });
+function calculateDiabetesRisk(calculator) {
+    try {
+        showLoading();
+        
+        // Collect form data safely
+        const formData = {
+            pregnancies: parseInt(document.getElementById('pregnancies')?.value) || 0,
+            glucose: parseInt(document.getElementById('glucose')?.value) || 0,
+            bloodPressure: parseInt(document.getElementById('bloodPressure')?.value) || 0,
+            skinThickness: parseInt(document.getElementById('skinThickness')?.value) || 0,
+            insulin: parseInt(document.getElementById('insulin')?.value) || 0,
+            bmi: parseFloat(document.getElementById('bmi')?.value) || 0,
+            diabetesPedigree: parseFloat(document.getElementById('diabetesPedigree')?.value) || 0,
+            age: parseInt(document.getElementById('age')?.value) || 0
+        };
+        
+        // Validate required fields
+        if (formData.glucose === 0) {
+            alert('Please enter glucose level');
+            return;
+        }
+        
+        // Calculate risk with delay to simulate processing
+        setTimeout(() => {
+            const riskScore = calculator.calculateRisk(formData);
+            showResult(riskScore);
+            
+            // ADD THIS LINE to show recommendations automatically
+            showRecommendations(riskScore, 'Logistic Regression');
+        }, 1000);
+        
+    } catch (error) {
+        console.error('Error calculating risk:', error);
+        alert('An error occurred. Please check your inputs.');
+    }
+}
+
+// Or add a separate button for recommendations
+function addRecommendationsButton() {
+    const resultDiv = document.getElementById('result');
+    if (resultDiv) {
+        const recommendBtn = document.createElement('button');
+        recommendBtn.textContent = 'View Detailed Recommendations';
+        recommendBtn.className = 'btn-recommend';
+        recommendBtn.onclick = function() {
+            const riskScore = parseInt(document.getElementById('risk-score').textContent);
+            showRecommendations(riskScore, 'Logistic Regression');
+        };
+        resultDiv.appendChild(recommendBtn);
+    }
+}
+// Example 1: Show recommendations after calculation
+showRecommendations(75, 'Logistic Regression'); // High risk
+
+// Example 2: Show medium risk
+showRecommendations(45, 'XGBoost'); // Medium risk
+
+// Example 3: Show low risk
+showRecommendations(15, 'Logistic Regression'); // Low risk
