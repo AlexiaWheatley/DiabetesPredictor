@@ -8,6 +8,7 @@
     --primary-blue: #2E86AB;
     --dark-blue: #1A535C;
     --light-blue: #A8DADC;
+    --grey-blue: #CBD5DC;
     --white: #FFFFFF;
     --light-gray: #F8F9FA;
     --medium-gray: #6C757D;
@@ -22,7 +23,7 @@ body {
     font-family: 'Inter', sans-serif;
     line-height: 1.6;
     color: var(--dark-gray);
-    background: var(--white);
+    background: var(--grey-blue);
     overflow-x: hidden;
 }
 
