@@ -9,224 +9,235 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Navigation Bar -->
-    <nav class="navbar">
-        <div class="nav-container">
+    <!-- Navigation Sidebar -->
+    <nav class="sidebar">
+        <div class="sidebar-header">
             <div class="nav-logo">
                 <i class="fas fa-heartbeat"></i>
-                <span>GameofNodes Diabetes Predictor</span>
+                <span>GameofNodes</span>
             </div>
-            <ul class="nav-menu">
-                <li><a href="#home" class="nav-link active">Home</a></li>
-                <li><a href="#calculator" class="nav-link">Risk Calculator</a></li>
-                <li><a href="#about" class="nav-link">About</a></li>
-            </ul>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
+            <div class="close-menu">
+                <i class="fas fa-times"></i>
             </div>
         </div>
+        <ul class="nav-menu">
+            <li><a href="#home" class="nav-link active">
+                <i class="fas fa-home"></i>
+                Home
+            </a></li>
+            <li><a href="#calculator" class="nav-link">
+                <i class="fas fa-calculator"></i>
+                Risk Calculator
+            </a></li>
+            <li><a href="#about" class="nav-link">
+                <i class="fas fa-info-circle"></i>
+                About
+            </a></li>
+        </ul>
     </nav>
 
-    <!-- Home Page -->
-    <section id="home" class="page active">
-        <div class="hero">
-            <div class="container">
-                <div class="hero-content">
-                    <div class="logo-central">
-                        <i class="fas fa-heartbeat"></i>
-                        <h1>GameofNodes Diabetes Predictor</h1>
-                    </div>
-                    <h2>Machine Learning for Early Detection</h2>
-                    <p>Using advanced data science and machine learning algorithms to predict diabetes risk and enable early intervention.</p>
-                    <div class="hero-buttons">
-                        <a href="#calculator" class="btn btn-primary nav-button">
-                            <i class="fas fa-calculator"></i>
-                            Check Your Risk
-                        </a>
-                        <a href="#about" class="btn btn-secondary nav-button">
-                            <i class="fas fa-info-circle"></i>
-                            Learn More
-                        </a>
-                    </div>
-                </div>
-                <div class="hero-stats">
-                    <div class="stat-card">
-                        <div class="stat-number">94%</div>
-                        <div class="stat-label">Accuracy</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number">8</div>
-                        <div class="stat-label">Clinical Features</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number">3</div>
-                        <div class="stat-label">ML Algorithms</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    <!-- Hamburger Menu -->
+    <div class="hamburger-menu">
+        <i class="fas fa-bars"></i>
+    </div>
 
-    <!-- Risk Calculator Page -->
-    <section id="calculator" class="page">
-        <div class="container">
-            <div class="page-header">
-                <h2>Diabetes Risk Calculator</h2>
-                <p>Enter your clinical information to assess diabetes risk</p>
-            </div>
-            
-            <div class="calculator-container">
-                <div class="input-section">
-                    <form id="diabetesForm" class="calculator-form">
-                        <div class="form-grid">
-                            <div class="form-group">
-                                <label for="pregnancies">
-                                    <i class="fas fa-baby"></i>
-                                    Pregnancies
-                                </label>
-                                <input type="number" id="pregnancies" min="0" max="15" value="0">
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="glucose">
-                                    <i class="fas fa-tint"></i>
-                                    Glucose (mg/dL)
-                                </label>
-                                <input type="number" id="glucose" min="0" max="200" value="120" required>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="bloodPressure">
-                                    <i class="fas fa-heartbeat"></i>
-                                    Blood Pressure
-                                </label>
-                                <input type="number" id="bloodPressure" min="0" max="122" value="70">
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="skinThickness">
-                                    <i class="fas fa-ruler"></i>
-                                    Skin Thickness (mm)
-                                </label>
-                                <input type="number" id="skinThickness" min="0" max="99" value="20">
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="insulin">
-                                    <i class="fas fa-syringe"></i>
-                                    Insulin Level
-                                </label>
-                                <input type="number" id="insulin" min="0" max="846" value="80">
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="bmi">
-                                    <i class="fas fa-weight"></i>
-                                    BMI (kg/m²)
-                                </label>
-                                <input type="number" id="bmi" min="18" max="67" step="0.1" value="25.0" required>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="diabetesPedigree">
-                                    <i class="fas fa-dna"></i>
-                                    Diabetes Pedigree
-                                </label>
-                                <input type="number" id="diabetesPedigree" min="0.08" max="2.5" step="0.01" value="0.5">
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="age">
-                                    <i class="fas fa-birthday-cake"></i>
-                                    Age (years)
-                                </label>
-                                <input type="number" id="age" min="21" max="81" value="35" required>
-                            </div>
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Home Page -->
+        <section id="home" class="page active">
+            <div class="page-content">
+                <div class="home-hero">
+                    <div class="hero-content">
+                        <div class="logo-central">
+                            <i class="fas fa-heartbeat"></i>
+                            <h1>Diabetes Predictor</h1>
                         </div>
-                        
-                        <button type="submit" class="btn btn-primary calculate-btn">
-                            <i class="fas fa-calculator"></i>
-                            Calculate Diabetes Risk
-                        </button>
-                    </form>
-                </div>
-                
-                <div class="results-section">
-                    <div id="results" class="results-card">
-                        <div class="results-header">
-                            <h3>Risk Assessment Results</h3>
-                            <div class="risk-indicator">
-                                <div id="riskLevel" class="risk-level">Enter your data</div>
-                                <div id="riskProbability" class="risk-probability">-</div>
-                            </div>
+                        <h2>Machine Learning for Early Detection</h2>
+                        <p>Using advanced data science and machine learning algorithms to predict diabetes risk and enable early intervention.</p>
+                        <div class="hero-buttons">
+                            <a href="#calculator" class="btn btn-primary nav-button">
+                                <i class="fas fa-calculator"></i>
+                                Check Your Risk
+                            </a>
                         </div>
-                        
-                        <div id="riskDescription" class="risk-description">
-                            <p>Fill out the form and click "Calculate Diabetes Risk" to see your personalized assessment.</p>
+                    </div>
+                    <div class="hero-stats">
+                        <div class="stat-card">
+                            <div class="stat-number">94%</div>
+                            <div class="stat-label">Accuracy</div>
                         </div>
-                        
-                        <div class="recommendations">
-                            <h4><i class="fas fa-lightbulb"></i> Recommendations</h4>
-                            <div id="recommendationContent" class="recommendation-content">
-                                <p>Personalized recommendations will appear here after assessment.</p>
-                            </div>
+                        <div class="stat-card">
+                            <div class="stat-number">8</div>
+                            <div class="stat-label">Clinical Features</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">3</div>
+                            <div class="stat-label">ML Algorithms</div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- About Page -->
-    <section id="about" class="page">
-        <div class="container">
-            <div class="page-header">
-                <h2>About GameofNodes Diabetes Predictor</h2>
-                <p>Learn about our mission and methodology</p>
-            </div>
-            
-            <div class="about-content">
-                <div class="about-card">
-                    <div class="about-icon">
-                        <i class="fas fa-bullseye"></i>
-                    </div>
-                    <h3>Our Mission</h3>
-                    <p>To provide accessible diabetes risk assessment using machine learning and data science principles for early detection and prevention.</p>
+        <!-- Risk Calculator Page -->
+        <section id="calculator" class="page">
+            <div class="page-content">
+                <div class="page-header">
+                    <h2>Diabetes Risk Calculator</h2>
+                    <p>Enter your clinical information to assess diabetes risk</p>
                 </div>
                 
-                <div class="about-card">
-                    <div class="about-icon">
-                        <i class="fas fa-database"></i>
+                <div class="calculator-container">
+                    <div class="input-section">
+                        <form id="diabetesForm" class="calculator-form">
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label for="pregnancies">
+                                        <i class="fas fa-baby"></i>
+                                        Pregnancies
+                                    </label>
+                                    <input type="number" id="pregnancies" min="0" max="15" value="0">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="glucose">
+                                        <i class="fas fa-tint"></i>
+                                        Glucose (mg/dL)
+                                    </label>
+                                    <input type="number" id="glucose" min="0" max="200" value="120" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="bloodPressure">
+                                        <i class="fas fa-heartbeat"></i>
+                                        Blood Pressure
+                                    </label>
+                                    <input type="number" id="bloodPressure" min="0" max="122" value="70">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="skinThickness">
+                                        <i class="fas fa-ruler"></i>
+                                        Skin Thickness (mm)
+                                    </label>
+                                    <input type="number" id="skinThickness" min="0" max="99" value="20">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="insulin">
+                                        <i class="fas fa-syringe"></i>
+                                        Insulin Level
+                                    </label>
+                                    <input type="number" id="insulin" min="0" max="846" value="80">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="bmi">
+                                        <i class="fas fa-weight"></i>
+                                        BMI (kg/m²)
+                                    </label>
+                                    <input type="number" id="bmi" min="18" max="67" step="0.1" value="25.0" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="diabetesPedigree">
+                                        <i class="fas fa-dna"></i>
+                                        Diabetes Pedigree
+                                    </label>
+                                    <input type="number" id="diabetesPedigree" min="0.08" max="2.5" step="0.01" value="0.5">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="age">
+                                        <i class="fas fa-birthday-cake"></i>
+                                        Age (years)
+                                    </label>
+                                    <input type="number" id="age" min="21" max="81" value="35" required>
+                                </div>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary calculate-btn">
+                                <i class="fas fa-calculator"></i>
+                                Calculate Diabetes Risk
+                            </button>
+                        </form>
                     </div>
-                    <h3>Data Source</h3>
-                    <p>Our model is trained on the Pima Indians Diabetes Dataset, containing 768 patient records with 8 clinical features.</p>
-                </div>
-                
-                <div class="about-card">
-                    <div class="about-icon">
-                        <i class="fas fa-brain"></i>
+                    
+                    <div class="results-section">
+                        <div id="results" class="results-card">
+                            <div class="results-header">
+                                <h3>Risk Assessment Results</h3>
+                                <div class="risk-indicator">
+                                    <div id="riskLevel" class="risk-level">Enter your data</div>
+                                    <div id="riskProbability" class="risk-probability">-</div>
+                                </div>
+                            </div>
+                            
+                            <div id="riskDescription" class="risk-description">
+                                <p>Fill out the form and click "Calculate Diabetes Risk" to see your personalized assessment.</p>
+                            </div>
+                            
+                            <div class="recommendations">
+                                <h4><i class="fas fa-lightbulb"></i> Recommendations</h4>
+                                <div id="recommendationContent" class="recommendation-content">
+                                    <p>Personalized recommendations will appear here after assessment.</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <h3>Technology</h3>
-                    <p>We use ensemble machine learning methods including XGBoost, Random Forest, and Logistic Regression for accurate predictions.</p>
-                </div>
-                
-                <div class="about-card">
-                    <div class="about-icon">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
-                    <h3>Privacy First</h3>
-                    <p>All calculations are performed locally in your browser. No personal data is stored or transmitted to servers.</p>
                 </div>
             </div>
-            
-            <div class="disclaimer">
-                <h4>Important Disclaimer</h4>
-                <p>This tool is for educational and informational purposes only. It is not a substitute for professional medical advice, diagnosis, or treatment. Always consult healthcare professionals for medical concerns.</p>
+        </section>
+
+        <!-- About Page -->
+        <section id="about" class="page">
+            <div class="page-content">
+                <div class="page-header">
+                    <h2>About Diabetes Predictor</h2>
+                    <p>Learn about our mission and methodology</p>
+                </div>
+                
+                <div class="about-content">
+                    <div class="about-card">
+                        <div class="about-icon">
+                            <i class="fas fa-bullseye"></i>
+                        </div>
+                        <h3>Our Mission</h3>
+                        <p>To provide accessible diabetes risk assessment using machine learning and data science principles for early detection and prevention.</p>
+                    </div>
+                    
+                    <div class="about-card">
+                        <div class="about-icon">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <h3>Data Source</h3>
+                        <p>Our model is trained on the Pima Indians Diabetes Dataset, containing 768 patient records with 8 clinical features.</p>
+                    </div>
+                    
+                    <div class="about-card">
+                        <div class="about-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h3>Technology</h3>
+                        <p>We use ensemble machine learning methods including XGBoost, Random Forest, and Logistic Regression for accurate predictions.</p>
+                    </div>
+                    
+                    <div class="about-card">
+                        <div class="about-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3>Privacy First</h3>
+                        <p>All calculations are performed locally in your browser. No personal data is stored or transmitted to servers.</p>
+                    </div>
+                </div>
+                
+                <div class="disclaimer">
+                    <h4>Important Disclaimer</h4>
+                    <p>This tool is for educational and informational purposes only. It is not a substitute for professional medical advice, diagnosis, or treatment. Always consult healthcare professionals for medical concerns.</p>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
     <script src="script.js"></script>
     <script src="calculator.js"></script>
