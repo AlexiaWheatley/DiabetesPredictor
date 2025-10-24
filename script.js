@@ -1,3 +1,41 @@
+class DiabetesCalculator {
+    constructor() {
+        this.features = [
+            'pregnancies', 'glucose', 'bloodPressure', 
+            'skinThickness', 'insulin', 'bmi', 
+            'diabetesPedigree', 'age'
+        ];
+    }
+
+    calculateRisk(formData) {
+        // Simple risk calculation (replace with your actual ML model)
+        let score = 0;
+        
+        // Glucose level weighting
+        if (formData.glucose > 140) score += 30;
+        else if (formData.glucose > 100) score += 15;
+        
+        // BMI weighting
+        if (formData.bmi > 30) score += 25;
+        else if (formData.bmi > 25) score += 15;
+        
+        // Age weighting
+        if (formData.age > 45) score += 20;
+        else if (formData.age > 35) score += 10;
+        
+        // Other factors
+        if (formData.bloodPressure > 130) score += 15;
+        if (formData.diabetesPedigree > 0.5) score += 10;
+        
+        return Math.min(score, 100);
+    }
+
+    getRiskLevel(score) {
+        if (score < 30) return 'Low';
+        if (score < 60) return 'Medium';
+        return 'High';
+    }
+}
 // Navigation and Page Management
 document.addEventListener('DOMContentLoaded', function() {
     // Initialize navigation
