@@ -1562,3 +1562,23 @@ body {
         font-size: 1.2rem;
     }
 }
+
+<style>
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Style for recommendation items */
+.recommendation-item {
+    padding: 12px;
+    margin: 8px 0;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    border-left: 4px solid #2E86AB;
+}
+.recommendation-item.urgent {
+    background: rgba(239, 71, 111, 0.1);
+    border-left-color: #EF476F;
+}
+</style>
