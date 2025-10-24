@@ -8,7 +8,7 @@ class DiabetesCalculator {
     }
 
     calculateRisk(formData) {
-        // Simple risk calculation (replace with your actual ML model)
+        // Simple risk calculation (replace with actual ML model)
         let score = 0;
         
         // Glucose level weighting
