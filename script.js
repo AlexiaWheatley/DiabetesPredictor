@@ -10,22 +10,48 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function initNavigation() {
+    const sidebar = document.querySelector('.sidebar');
+    const hamburger = document.querySelector('.hamburger-menu');
+    const closeMenu = document.querySelector('.close-menu');
+    const navLinks = document.querySelectorAll('.nav-link');
+    const mainContent = document.querySelector('.main-content');
+
+    // Toggle sidebar
+    hamburger.addEventListener('click', function() {
+        sidebar.classList.add('active');
+    });
+
+    closeMenu.addEventListener('click', function() {
+        sidebar.classList.remove('active');
+    });
+
     // Handle navigation clicks
-    const navLinks = document.querySelectorAll('.nav-link, .nav-button');
     navLinks.forEach(link => {
         link.addEventListener('click', function(e) {
             e.preventDefault();
             const targetPage = this.getAttribute('href').replace('#', '');
-            showPage(targetPage);
             
             // Update active nav link
-            document.querySelectorAll('.nav-link').forEach(nav => {
-                nav.classList.remove('active');
-            });
+            navLinks.forEach(nav => nav.classList.remove('active'));
             this.classList.add('active');
+            
+            // Show target page
+            showPage(targetPage);
+            
+            // Close sidebar on mobile
+            if (window.innerWidth <= 768) {
+                sidebar.classList.remove('active');
+            }
         });
     });
-    
+
+    // Close sidebar when clicking on main content
+    mainContent.addEventListener('click', function() {
+        if (window.innerWidth <= 768 && sidebar.classList.contains('active')) {
+            sidebar.classList.remove('active');
+        }
+    });
+
     // Show home page by default
     showPage('home');
 }
@@ -45,16 +71,3 @@ function showPage(pageId) {
     // Scroll to top
     window.scrollTo(0, 0);
 }
-
-// Mobile menu toggle (optional enhancement)
-document.addEventListener('DOMContentLoaded', function() {
-    const hamburger = document.querySelector('.hamburger');
-    const navMenu = document.querySelector('.nav-menu');
-    
-    if (hamburger && navMenu) {
-        hamburger.addEventListener('click', function() {
-            navMenu.classList.toggle('active');
-            hamburger.classList.toggle('active');
-        });
-    }
-});
