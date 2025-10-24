@@ -252,5 +252,128 @@
 
     <script src="script.js"></script>
     <script src="calculator.js"></script>
+
+    <!-- Recommendations Popup -->
+<div id="recommendationsModal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn">&times;</span>
+        
+        <div class="risk-header" id="riskHeader">
+            <h2>Your Diabetes Risk Assessment</h2>
+            <div class="risk-badge" id="riskBadge">
+                <span id="riskLevelText">Low Risk</span>
+            </div>
+        </div>
+
+        <div class="recommendations-container">
+            <!-- High Risk Recommendations -->
+            <div class="risk-category high-risk" id="highRiskRecs">
+                <div class="category-header">
+                    <h3>🔴 High Risk Recommendations</h3>
+                    <p class="risk-score">Risk Score: <span id="highRiskScore">0%</span></p>
+                </div>
+                <div class="recommendation-list">
+                    <div class="rec-item urgent">
+                        <h4>🩺 Immediate Medical Actions</h4>
+                        <ul>
+                            <li>Schedule doctor appointment within 1 week</li>
+                            <li>Request HbA1c and glucose tolerance tests</li>
+                            <li>Discuss family history with physician</li>
+                        </ul>
+                    </div>
+                    <div class="rec-item">
+                        <h4>🍎 Lifestyle Changes</h4>
+                        <ul>
+                            <li>Reduce sugar and refined carbs by 80%</li>
+                            <li>30 minutes daily exercise</li>
+                            <li>Aim for 5-7% weight loss if overweight</li>
+                        </ul>
+                    </div>
+                    <div class="rec-item">
+                        <h4>📊 Monitoring</h4>
+                        <ul>
+                            <li>Weekly blood pressure checks</li>
+                            <li>Consider blood glucose monitoring</li>
+                            <li>Follow-up every 3-6 months</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Medium Risk Recommendations -->
+            <div class="risk-category medium-risk" id="mediumRiskRecs">
+                <div class="category-header">
+                    <h3>🟡 Medium Risk Recommendations</h3>
+                    <p class="risk-score">Risk Score: <span id="mediumRiskScore">0%</span></p>
+                </div>
+                <div class="recommendation-list">
+                    <div class="rec-item">
+                        <h4>🏥 Health Assessment</h4>
+                        <ul>
+                            <li>Annual physical examination</li>
+                            <li>Baseline blood tests (glucose, lipids)</li>
+                            <li>Cardiovascular risk assessment</li>
+                        </ul>
+                    </div>
+                    <div class="rec-item">
+                        <h4>🥗 Lifestyle Modifications</h4>
+                        <ul>
+                            <li>Limit added sugars to <25g daily</li>
+                            <li>150 minutes moderate activity weekly</li>
+                            <li>Increase vegetables to 5+ servings daily</li>
+                        </ul>
+                    </div>
+                    <div class="rec-item">
+                        <h4>🎯 Prevention Program</h4>
+                        <ul>
+                            <li>Join diabetes prevention program</li>
+                            <li>Set specific health goals</li>
+                            <li>Regular self-monitoring</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Low Risk Recommendations -->
+            <div class="risk-category low-risk" id="lowRiskRecs">
+                <div class="category-header">
+                    <h3>🟢 Low Risk Recommendations</h3>
+                    <p class="risk-score">Risk Score: <span id="lowRiskScore">0%</span></p>
+                </div>
+                <div class="recommendation-list">
+                    <div class="rec-item">
+                        <h4>💪 Maintenance</h4>
+                        <ul>
+                            <li>Continue balanced diet and exercise</li>
+                            <li>Maintain healthy weight</li>
+                            <li>Annual health check-ups</li>
+                        </ul>
+                    </div>
+                    <div class="rec-item">
+                        <h4>📚 Education</h4>
+                        <ul>
+                            <li>Learn early warning signs</li>
+                            <li>Stay informed about prevention</li>
+                            <li>Understand healthy aging strategies</li>
+                        </ul>
+                    </div>
+                    <div class="rec-item">
+                        <h4>🔍 Monitoring</h4>
+                        <ul>
+                            <li>Reassess risk annually</li>
+                            <li>Monitor family history updates</li>
+                            <li>Maintain vaccination schedule</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="action-buttons">
+            <button class="btn-print" onclick="printRecommendations()">Print Recommendations</button>
+            <button class="btn-close" onclick="closeRecommendations()">Close</button>
+        </div>
+    </div>
+</div>
 </body>
 </html>
