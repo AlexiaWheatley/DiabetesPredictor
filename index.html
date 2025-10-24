@@ -212,76 +212,447 @@
 </section>
 
         <!-- Risk Calculator Page -->
-        <section id="calculator" class="page">
-            <div class="page-content">
-                <div class="page-header">
-                    <h2>Diabetes Risk Calculator</h2>
-                    <p>Enter your clinical information to assess diabetes risk</p>
+     <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diabetes Risk Calculator</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .calculator-container {
+            width: 100%;
+            max-width: 900px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .page-header {
+            text-align: center;
+            margin-bottom: 30px;
+            width: 100%;
+        }
+        
+        .page-header h2 {
+            color: #2c3e50;
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+        
+        .page-header p {
+            color: #7f8c8d;
+            font-size: 18px;
+        }
+        
+        .calculator-card {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            width: 100%;
+            margin-bottom: 30px;
+        }
+        
+        .calculator-content {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        #diabetesForm {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .input-with-icon {
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+        
+        .input-with-icon i {
+            position: absolute;
+            left: 15px;
+            font-size: 18px;
+            color: #3498db;
+            z-index: 1;
+        }
+        
+        .form-group label {
+            margin-bottom: 8px;
+            color: #2c3e50;
+            font-weight: 600;
+            font-size: 16px;
+        }
+        
+        .form-group input {
+            width: 100%;
+            padding: 12px 15px 12px 45px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-size: 16px;
+            transition: all 0.3s;
+        }
+        
+        .form-group input:focus {
+            border-color: #3498db;
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+        }
+        
+        .submit-btn {
+            grid-column: span 2;
+            background: #3498db;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 18px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-top: 10px;
+            font-weight: 600;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .submit-btn i {
+            margin-right: 10px;
+        }
+        
+        .submit-btn:hover {
+            background: #2980b9;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.4);
+        }
+        
+        .results-card {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            width: 100%;
+        }
+        
+        .results-header {
+            text-align: center;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .results-header h3 {
+            color: #2c3e50;
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+        
+        .risk-indicator {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .risk-level {
+            font-size: 24px;
+            font-weight: 700;
+            padding: 10px 20px;
+            border-radius: 10px;
+            background: #f8f9fa;
+            color: #7f8c8d;
+        }
+        
+        .risk-probability {
+            font-size: 28px;
+            font-weight: 700;
+            color: #2c3e50;
+        }
+        
+        .risk-description {
+            margin-bottom: 25px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            color: #7f8c8d;
+            line-height: 1.6;
+        }
+        
+        .recommendations {
+            margin-top: 25px;
+            padding-top: 25px;
+            border-top: 1px solid #eee;
+        }
+        
+        .recommendations h4 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 20px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .recommendations h4 i {
+            color: #f39c12;
+            margin-right: 10px;
+        }
+        
+        .recommendation-content {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 10px;
+            color: #7f8c8d;
+            line-height: 1.6;
+        }
+        
+        .recommendation-content ul {
+            padding-left: 20px;
+        }
+        
+        .recommendation-content li {
+            margin-bottom: 8px;
+        }
+        
+        .low-risk {
+            color: #27ae60;
+            background: rgba(39, 174, 96, 0.1) !important;
+        }
+        
+        .medium-risk {
+            color: #f39c12;
+            background: rgba(243, 156, 18, 0.1) !important;
+        }
+        
+        .high-risk {
+            color: #e74c3c;
+            background: rgba(231, 76, 60, 0.1) !important;
+        }
+        
+        #loadingSpinner {
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .spinner {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #3498db;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 2s linear infinite;
+            margin: 0 auto;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        @media (max-width: 768px) {
+            #diabetesForm {
+                grid-template-columns: 1fr;
+            }
+            
+            .submit-btn {
+                grid-column: span 1;
+            }
+            
+            .risk-indicator {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section id="calculator" class="page">
+        <div class="calculator-container">
+            <div class="page-header">
+                <h2>Diabetes Risk Calculator</h2>
+                <p>Enter your clinical information to assess diabetes risk</p>
+            </div>
+            
+            <div class="calculator-card">
+                <div class="calculator-content">
+                    <form id="diabetesForm">
+                        <div class="form-group">
+                            <label for="pregnancies">Pregnancies:</label>
+                            <div class="input-with-icon">
+                                <i class="fas fa-baby"></i>
+                                <input type="number" id="pregnancies" name="pregnancies" min="0" max="20" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="glucose">Glucose (mg/dL):</label>
+                            <div class="input-with-icon">
+                                <i class="fas fa-tint"></i>
+                                <input type="number" id="glucose" name="glucose" min="0" max="300" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="bmi">BMI:</label>
+                            <div class="input-with-icon">
+                                <i class="fas fa-weight"></i>
+                                <input type="number" id="bmi" name="bmi" min="10" max="60" step="0.1" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="dpf">Diabetes Pedigree Function:</label>
+                            <div class="input-with-icon">
+                                <i class="fas fa-dna"></i>
+                                <input type="number" id="dpf" name="dpf" min="0" max="2.5" step="0.01" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="age">Age:</label>
+                            <div class="input-with-icon">
+                                <i class="fas fa-birthday-cake"></i>
+                                <input type="number" id="age" name="age" min="21" max="100" required>
+                            </div>
+                        </div>
+                        
+                        <button type="submit" class="submit-btn">
+                            <i class="fas fa-calculator"></i> Calculate Risk
+                        </button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="results-card">
+                <div class="results-header">
+                    <h3>Risk Assessment Results</h3>
+                    <div class="risk-indicator">
+                        <div id="riskLevel" class="risk-level">Enter your data</div>
+                        <div id="riskScore" class="risk-probability">-</div>
+                    </div>
                 </div>
                 
-                <div class="calculator-container">
-    <form id="diabetesForm">
-        <div class="form-group">
-            <label for="pregnancies">Pregnancies:</label>
-            <input type="number" id="pregnancies" name="pregnancies" min="0" max="20" required>
-        </div>
-        
-        <div class="form-group">
-            <label for="glucose">Glucose (mg/dL):</label>
-            <input type="number" id="glucose" name="glucose" min="0" max="300" required>
-        </div>
-        
-        <div class="form-group">
-            <label for="bmi">BMI:</label>
-            <input type="number" id="bmi" name="bmi" min="10" max="60" step="0.1" required>
-        </div>
-        
-        <div class="form-group">
-            <label for="dpf">Diabetes Pedigree Function:</label>
-            <input type="number" id="dpf" name="dpf" min="0" max="2.5" step="0.01" required>
-        </div>
-        
-        <div class="form-group">
-            <label for="age">Age:</label>
-            <input type="number" id="age" name="age" min="21" max="100" required>
-        </div>
-        
-        <button type="submit">Calculate Risk</button>
-        </div>
+                <div id="riskDescription" class="risk-description">
+                    <p>Fill out the form and click "Calculate Risk" to see your personalized assessment.</p>
+                </div>
                 
-    </form>
-</div>
+                <div class="recommendations">
+                    <h4><i class="fas fa-lightbulb"></i> Recommendations</h4>
+                    <div id="recommendationContent" class="recommendation-content">
+                        <p>Personalized recommendations will appear here after assessment.</p>
+                    </div>
+                </div>
 
-<div class="results-section">
-    <div id="results" class="results-card">
-        <div class="results-header">
-            <h3>Risk Assessment Results</h3>
-            <div class="risk-indicator">
-                <div id="riskLevel" class="risk-level">Enter your data</div>
-                <div id="riskScore" class="risk-probability">-</div>
+                <div id="loadingSpinner" style="display: none;">
+                    <div class="spinner"></div>
+                    <p style="margin-top: 10px; color: #666;">Analyzing your data...</p>
+                </div>
             </div>
         </div>
-        
-        <div id="riskDescription" class="risk-description">
-            <p>Fill out the form and click "Calculate Risk" to see your personalized assessment.</p>
-        </div>
-        
-        <!-- ADD THIS RECOMMENDATIONS SECTION -->
-        <div class="recommendations">
-            <h4><i class="fas fa-lightbulb"></i> Recommendations</h4>
-            <div id="recommendationContent" class="recommendation-content">
-                <p>Personalized recommendations will appear here after assessment.</p>
-            </div>
-        </div>
+    </section>
 
-        <!-- ADD THIS LOADING SPINNER -->
-        <div id="loadingSpinner" style="display: none; text-align: center; padding: 20px;">
-            <div class="spinner" style="border: 4px solid #f3f3f3; border-top: 4px solid #3498db; border-radius: 50%; width: 40px; height: 40px; animation: spin 2s linear infinite; margin: 0 auto;"></div>
-            <p style="margin-top: 10px; color: #666;">Analyzing your data with AI...</p>
-        </div>
-    </div>
-</div>
-
+    <script>
+        document.getElementById('diabetesForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Show loading spinner
+            document.getElementById('loadingSpinner').style.display = 'block';
+            
+            // Get input values
+            const pregnancies = parseFloat(document.getElementById('pregnancies').value);
+            const glucose = parseFloat(document.getElementById('glucose').value);
+            const bmi = parseFloat(document.getElementById('bmi').value);
+            const dpf = parseFloat(document.getElementById('dpf').value);
+            const age = parseFloat(document.getElementById('age').value);
+            
+            // Simulate API call delay
+            setTimeout(() => {
+                // Hide loading spinner
+                document.getElementById('loadingSpinner').style.display = 'none';
+                
+                // Calculate risk score (simplified algorithm)
+                let riskScore = 0;
+                
+                // Pregnancies factor
+                if (pregnancies > 3) riskScore += 2;
+                else if (pregnancies > 1) riskScore += 1;
+                
+                // Glucose factor
+                if (glucose > 140) riskScore += 3;
+                else if (glucose > 120) riskScore += 2;
+                else if (glucose > 100) riskScore += 1;
+                
+                // BMI factor
+                if (bmi > 30) riskScore += 3;
+                else if (bmi > 25) riskScore += 2;
+                else if (bmi > 22) riskScore += 1;
+                
+                // Pedigree factor
+                if (dpf > 1.0) riskScore += 2;
+                else if (dpf > 0.5) riskScore += 1;
+                
+                // Age factor
+                if (age > 35) riskScore += 2;
+                else if (age > 25) riskScore += 1;
+                
+                // Calculate probability percentage
+                const probability = Math.min(100, Math.max(0, (riskScore / 12) * 100));
+                
+                // Determine risk level
+                let riskLevel, riskDescription, recommendations;
+                const riskResult = document.getElementById('riskLevel');
+                const riskScoreElement = document.getElementById('riskScore');
+                const riskDescriptionElement = document.getElementById('riskDescription');
+                const recommendationContent = document.getElementById('recommendationContent');
+                
+                if (probability <= 30) {
+                    riskLevel = 'Low Risk';
+                    riskDescription = 'Based on the information provided, your risk of developing diabetes appears to be low. Continue with regular health check-ups and maintain a healthy lifestyle.';
+                    recommendations = '<ul><li>Continue regular physical activity (at least 150 minutes per week)</li><li>Maintain a balanced diet rich in fruits, vegetables, and whole grains</li><li>Schedule annual health check-ups</li><li>Monitor your blood sugar levels if you have family history of diabetes</li></ul>';
+                    riskResult.className = 'risk-level low-risk';
+                } else if (probability <= 70) {
+                    riskLevel = 'Medium Risk';
+                    riskDescription = 'Based on the information provided, you have a moderate risk of developing diabetes. Consider speaking with your healthcare provider about preventive measures.';
+                    recommendations = '<ul><li>Increase physical activity to 150-300 minutes per week</li><li>Focus on weight management if needed</li><li>Consider reducing sugar and refined carbohydrate intake</li><li>Discuss screening options with your healthcare provider</li><li>Monitor blood pressure and cholesterol levels</li></ul>';
+                    riskResult.className = 'risk-level medium-risk';
+                } else {
+                    riskLevel = 'High Risk';
+                    riskDescription = 'Based on the information provided, you have a higher risk of developing diabetes. It is recommended to speak with your healthcare provider about appropriate screening and management strategies.';
+                    recommendations = '<ul><li>Consult with a healthcare provider for comprehensive assessment</li><li>Consider glucose tolerance testing</li><li>Implement dietary changes under professional guidance</li><li>Increase physical activity as recommended by your doctor</li><li>Regular monitoring of blood glucose levels</li><li>Weight management program if needed</li></ul>';
+                    riskResult.className = 'risk-level high-risk';
+                }
+                
+                // Display results
+                riskResult.textContent = riskLevel;
+                riskScoreElement.textContent = `${probability.toFixed(1)}%`;
+                riskDescriptionElement.innerHTML = `<p>${riskDescription}</p>`;
+                recommendationContent.innerHTML = recommendations;
+            }, 1500); // Simulate 1.5 second processing time
+        });
+    </script>
+</body>
+</html>
 
         <!-- About Page -->
         <section id="about" class="page">
