@@ -267,3 +267,54 @@ showRecommendations(45, 'XGBoost'); // Medium risk
 
 // Example 3: Show low risk
 showRecommendations(15, 'Logistic Regression'); // Low risk
+
+// Smooth navigation between pages
+document.addEventListener('DOMContentLoaded', function() {
+    // Handle navigation links
+    const navLinks = document.querySelectorAll('.nav-link');
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            showPage(targetId);
+        });
+    });
+    
+    // Handle calculator button on home page
+    const calculatorBtn = document.querySelector('a[href="#calculator"]');
+    if (calculatorBtn) {
+        calculatorBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            showPage('#calculator');
+        });
+    }
+});
+
+function showPage(pageId) {
+    // Hide all pages
+    const pages = document.querySelectorAll('.page');
+    pages.forEach(page => {
+        page.classList.remove('active');
+    });
+    
+    // Show target page
+    const targetPage = document.querySelector(pageId);
+    if (targetPage) {
+        targetPage.classList.add('active');
+    }
+    
+    // Update active nav link
+    const navLinks = document.querySelectorAll('.nav-link');
+    navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === pageId) {
+            link.classList.add('active');
+        }
+    });
+    
+    // Close mobile sidebar if open
+    const sidebar = document.querySelector('.sidebar');
+    if (sidebar && sidebar.classList.contains('active')) {
+        sidebar.classList.remove('active');
+    }
+}
