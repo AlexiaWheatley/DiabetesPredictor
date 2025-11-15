@@ -44,281 +44,615 @@
     <!-- Main Content -->
     <main class="main-content">
         <!-- Home Page -->
-        <section id="home" class="page active">
-            <div class="page-content">
-                <div class="home-hero">
-                    <div class="hero-content">
-                        <div class="logo-central">
-                            <i class="fas fa-heartbeat"></i>
-                            <h1>Diabetes Predictor</h1>
-                        </div>
-                        <h2>Machine Learning for Early Detection</h2>
-                        <p>Using advanced data science and machine learning algorithms to predict diabetes risk and enable early intervention.</p>
-                        <div class="hero-buttons">
-                            <a href="#calculator" class="btn btn-primary">
-                                <i class="fas fa-calculator"></i>
-                                Check Your Risk
-                            </a>
-                        </div>
+<!-- Home Page -->
+<section id="home" class="page active">
+    <div class="page-content">
+        <div class="home-hero">
+            <div class="hero-content">
+                <div class="logo-central">
+                    <i class="fas fa-heartbeat"></i>
+                    <h1>Diabetes Predictor</h1>
+                </div>
+                <h2>Machine Learning for Early Detection</h2>
+                <p>Using advanced data science and machine learning algorithms to predict diabetes risk and enable early intervention.</p>
+<div class="hero-buttons">
+    <a href="#calculator" class="btn btn-primary">
+        <i class="fas fa-calculator"></i>
+        Check Your Risk
+    </a>
+</div>
+            </div>
+            <div class="hero-stats">
+                <div class="stat-card">
+                    <div class="stat-number">94%</div>
+                    <div class="stat-label">Accuracy</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">5</div>
+                    <div class="stat-label">Clinical Features</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">2</div>
+                    <div class="stat-label">ML Algorithms</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Diabetes Info Bubbles Section - CORRECTLY PLACED -->
+        <div class="diabetes-info-bubbles">
+            <div class="bubbles-header">
+                <h2>Understanding Diabetes</h2>
+                <p>Key facts and statistics about this global health challenge</p>
+            </div>
+
+            <div class="bubbles-container">
+                <!-- Bubble 1: What is Diabetes -->
+                <div class="info-bubble">
+                    <div class="bubble-icon">
+                        <i class="fas fa-info-circle"></i>
                     </div>
-                    <div class="hero-stats">
-                        <div class="stat-card">
-                            <div class="stat-number">94%</div>
-                            <div class="stat-label">Accuracy</div>
+                    <h3>What is Diabetes?</h3>
+                    <p>A chronic disease that occurs when the pancreas cannot produce enough insulin or when the body cannot effectively use the insulin it produces, leading to elevated blood glucose levels.</p>
+                    <div class="bubble-stats">
+                        <div class="bubble-stat">
+                            <div class="stat-main">Type 1</div>
+                            <div class="stat-desc">Autoimmune condition</div>
                         </div>
-                        <div class="stat-card">
-                            <div class="stat-number">5</div>
-                            <div class="stat-label">Clinical Features</div>
-                        </div>
-                        <div class="stat-card">
-                            <div class="stat-number">2</div>
-                            <div class="stat-label">ML Algorithms</div>
+                        <div class="bubble-stat">
+                            <div class="stat-main">Type 2</div>
+                            <div class="stat-desc">Most common form (90%)</div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Diabetes Info Bubbles Section -->
-                <div class="diabetes-info-bubbles">
-                    <div class="bubbles-header">
-                        <h2>Understanding Diabetes</h2>
-                        <p>Key facts and statistics about this global health challenge</p>
+                <!-- Bubble 2: Global Statistics -->
+                <div class="info-bubble">
+                    <div class="bubble-icon">
+                        <i class="fas fa-globe-americas"></i>
                     </div>
-                    
-                    <div class="bubbles-container">
-                        <!-- Your existing bubble content remains the same -->
-                        <div class="info-bubble">
-                            <div class="bubble-icon">
-                                <i class="fas fa-info-circle"></i>
-                            </div>
-                            <h3>What is Diabetes?</h3>
-                            <p>A chronic disease that occurs when the pancreas cannot produce enough insulin or when the body cannot effectively use the insulin it produces, leading to elevated blood glucose levels.</p>
-                            <div class="bubble-stats">
-                                <div class="bubble-stat">
-                                    <div class="stat-main">Type 1</div>
-                                    <div class="stat-desc">Autoimmune condition</div>
-                                </div>
-                                <div class="bubble-stat">
-                                    <div class="stat-main">Type 2</div>
-                                    <div class="stat-desc">Most common form (90%)</div>
-                                </div>
-                            </div>
+                    <h3>Global Impact</h3>
+                    <p>Diabetes affects millions worldwide with growing prevalence across all regions and age groups.</p>
+                    <div class="bubble-stats">
+                        <div class="bubble-stat">
+                            <div class="stat-main">537M</div>
+                            <div class="stat-desc">Adults with diabetes</div>
                         </div>
+                        <div class="bubble-stat">
+                            <div class="stat-main">1 in 10</div>
+                            <div class="stat-desc">Adults affected</div>
+                        </div>
+                        <div class="bubble-stat">
+                            <div class="stat-main">6.7M</div>
+                            <div class="stat-desc">Deaths per year</div>
+                        </div>
+                    </div>
+                </div>
 
-                        <!-- Add your other 4 bubbles here -->
+                <!-- Bubble 3: Risk Factors -->
+                <div class="info-bubble">
+                    <div class="bubble-icon">
+                        <i class="fas fa-exclamation-triangle"></i>
+                    </div>
+                    <h3>Key Risk Factors</h3>
+                    <p>Several factors can increase your likelihood of developing Type 2 diabetes.</p>
+                    <div class="risk-list">
+                        <div class="risk-item">
+                            <i class="fas fa-weight"></i>
+                            <span>Overweight (BMI > 25)</span>
+                        </div>
+                        <div class="risk-item">
+                            <i class="fas fa-walking"></i>
+                            <span>Physical inactivity</span>
+                        </div>
+                        <div class="risk-item">
+                            <i class="fas fa-family"></i>
+                            <span>Family history</span>
+                        </div>
+                        <div class="risk-item">
+                            <i class="fas fa-birthday-cake"></i>
+                            <span>Age over 45</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bubble 4: Projections -->
+                <div class="info-bubble">
+                    <div class="bubble-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Future Projections</h3>
+                    <p>Diabetes prevalence is expected to continue rising significantly in the coming decades.</p>
+                    <div class="projection-timeline">
+                        <div class="timeline-item">
+                            <div class="year">2021</div>
+                            <div class="cases">537M cases</div>
+                        </div>
+                        <div class="timeline-arrow">
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="year">2030</div>
+                            <div class="cases">643M cases</div>
+                        </div>
+                        <div class="timeline-arrow">
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="year">2045</div>
+                            <div class="cases">783M cases</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bubble 5: Prevention -->
+                <div class="info-bubble">
+                    <div class="bubble-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Prevention & Early Detection</h3>
+                    <p>Early detection and lifestyle changes can significantly reduce diabetes risk and complications.</p>
+                    <div class="prevention-stats">
+                        <div class="prevention-stat">
+                            <div class="prevention-number">58%</div>
+                            <div class="prevention-desc">Risk reduction through lifestyle changes</div>
+                        </div>
+                        <div class="prevention-stat">
+                            <div class="prevention-number">5-10%</div>
+                            <div class="prevention-desc">Weight loss prevents/delays onset</div>
+                        </div>
+                        <div class="prevention-stat">
+                            <div class="prevention-number">71%</div>
+                            <div class="prevention-desc">Lower cardiovascular risk with early intervention</div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </div>
+</section>
 
         <!-- Risk Calculator Page -->
-        <section id="calculator" class="page">
-            <div class="calculator-container">
-                <div class="page-header">
-                    <h2>Diabetes Risk Calculator</h2>
-                    <p>Enter your clinical information to assess diabetes risk</p>
-                </div>
-                
-                <div class="calculator-card">
-                    <div class="calculator-content">
-                        <form id="diabetesForm">
-                            <div class="form-group">
-                                <label for="pregnancies">Pregnancies:</label>
-                                <div class="input-with-icon">
-                                    <i class="fas fa-baby"></i>
-                                    <input type="number" id="pregnancies" name="pregnancies" min="0" max="20" required>
-                                </div>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="glucose">Glucose (mg/dL):</label>
-                                <div class="input-with-icon">
-                                    <i class="fas fa-tint"></i>
-                                    <input type="number" id="glucose" name="glucose" min="0" max="300" required>
-                                </div>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="bmi">BMI:</label>
-                                <div class="input-with-icon">
-                                    <i class="fas fa-weight"></i>
-                                    <input type="number" id="bmi" name="bmi" min="10" max="60" step="0.1" required>
-                                </div>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="dpf">Diabetes Pedigree Function:</label>
-                                <div class="input-with-icon">
-                                    <i class="fas fa-dna"></i>
-                                    <input type="number" id="dpf" name="dpf" min="0" max="2.5" step="0.01" required>
-                                </div>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="age">Age:</label>
-                                <div class="input-with-icon">
-                                    <i class="fas fa-birthday-cake"></i>
-                                    <input type="number" id="age" name="age" min="21" max="100" required>
-                                </div>
-                            </div>
-                            
-                            <button type="submit" class="submit-btn">
-                                <i class="fas fa-calculator"></i> Calculate Risk
-                            </button>
-                        </form>
-                    </div>
-                </div>
-                
-                <div class="results-card">
-                    <div class="results-header">
-                        <h3>Risk Assessment Results</h3>
-                        <div class="risk-indicator">
-                            <div id="riskLevel" class="risk-level">Enter your data</div>
-                            <div id="riskScore" class="risk-probability">-</div>
-                        </div>
-                    </div>
-                    
-                    <div id="riskDescription" class="risk-description">
-                        <p>Fill out the form and click "Calculate Risk" to see your personalized assessment.</p>
-                    </div>
-                    
-                    <div class="recommendations">
-                        <h4><i class="fas fa-lightbulb"></i> Recommendations</h4>
-                        <div id="recommendationContent" class="recommendation-content">
-                            <p>Personalized recommendations will appear here after assessment.</p>
-                        </div>
-                    </div>
+     <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diabetes Risk Calculator</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
 
-                    <div id="loadingSpinner" style="display: none;">
-                        <div class="spinner"></div>
-                        <p style="margin-top: 10px; color: #666;">Analyzing your data...</p>
-                    </div>
-                </div>
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
 
-                <!-- Metrics Card -->
-                <div class="metrics-card">
-                    <div class="metrics-header">
-                        <h3><i class="fas fa-chart-pie"></i> Model Performance Analysis</h3>
-                        <p>Live metrics visualization based on your input data</p>
-                    </div>
-                    
-                    <div class="metrics-container">
-                        <div class="confusion-matrix">
-                            <h4>Prediction Distribution</h4>
-                            <div class="matrix-grid">
-                                <div class="matrix-cell header">Actual/Predicted</div>
-                                <div class="matrix-cell header">Diabetic</div>
-                                <div class="matrix-cell header">Non-Diabetic</div>
-                                
-                                <div class="matrix-cell header">Diabetic</div>
-                                <div class="matrix-cell true-positive" id="truePositive">45</div>
-                                <div class="matrix-cell false-negative" id="falseNegative">8</div>
-                                
-                                <div class="matrix-cell header">Non-Diabetic</div>
-                                <div class="matrix-cell false-positive" id="falsePositive">12</div>
-                                <div class="matrix-cell true-negative" id="trueNegative">135</div>
-                            </div>
-                            
-                            <div class="matrix-totals">
-                                <div class="total-item">
-                                    <span class="total-label">Total Predictions:</span>
-                                    <span class="total-value" id="totalPredictions">200</span>
-                                </div>
-                                <div class="total-item">
-                                    <span class="total-label">Correct Predictions:</span>
-                                    <span class="total-value" id="correctPredictions">180</span>
-                                </div>
+        .calculator-container {
+            width: 100%;
+            max-width: 900px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 30px;
+            width: 100%;
+        }
+
+        .page-header h2 {
+            color: #2c3e50;
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .page-header p {
+            color: #7f8c8d;
+            font-size: 18px;
+        }
+
+        .calculator-card {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            width: 100%;
+            margin-bottom: 30px;
+        }
+
+        .calculator-content {
+            display: flex;
+            flex-direction: column;
+        }
+
+        #diabetesForm {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .input-with-icon {
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+
+        .input-with-icon i {
+            position: absolute;
+            left: 15px;
+            font-size: 18px;
+            color: #3498db;
+            z-index: 1;
+        }
+
+        .form-group label {
+            margin-bottom: 8px;
+            color: #2c3e50;
+            font-weight: 600;
+            font-size: 16px;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px 15px 12px 45px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-size: 16px;
+            transition: all 0.3s;
+        }
+
+        .form-group input:focus {
+            border-color: #3498db;
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+        }
+
+        .submit-btn {
+            grid-column: span 2;
+            background: #3498db;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 18px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-top: 10px;
+            font-weight: 600;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .submit-btn i {
+            margin-right: 10px;
+        }
+
+        .submit-btn:hover {
+            background: #2980b9;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.4);
+        }
+
+        .results-card {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            width: 100%;
+        }
+
+        .results-header {
+            text-align: center;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .results-header h3 {
+            color: #2c3e50;
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        .risk-indicator {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .risk-level {
+            font-size: 24px;
+            font-weight: 700;
+            padding: 10px 20px;
+            border-radius: 10px;
+            background: #f8f9fa;
+            color: #7f8c8d;
+        }
+
+        .risk-probability {
+            font-size: 28px;
+            font-weight: 700;
+            color: #2c3e50;
+        }
+
+        .risk-description {
+            margin-bottom: 25px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            color: #7f8c8d;
+            line-height: 1.6;
+        }
+
+        .recommendations {
+            margin-top: 25px;
+            padding-top: 25px;
+            border-top: 1px solid #eee;
+        }
+
+        .recommendations h4 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        .recommendations h4 i {
+            color: #f39c12;
+            margin-right: 10px;
+        }
+
+        .recommendation-content {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 10px;
+            color: #7f8c8d;
+            line-height: 1.6;
+        }
+
+        .recommendation-content ul {
+            padding-left: 20px;
+        }
+
+        .recommendation-content li {
+            margin-bottom: 8px;
+        }
+
+        .low-risk {
+            color: #27ae60;
+            background: rgba(39, 174, 96, 0.1) !important;
+        }
+
+        .medium-risk {
+            color: #f39c12;
+            background: rgba(243, 156, 18, 0.1) !important;
+        }
+
+        .high-risk {
+            color: #e74c3c;
+            background: rgba(231, 76, 60, 0.1) !important;
+        }
+
+        #loadingSpinner {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .spinner {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #3498db;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 2s linear infinite;
+            margin: 0 auto;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @media (max-width: 768px) {
+            #diabetesForm {
+                grid-template-columns: 1fr;
+            }
+
+            .submit-btn {
+                grid-column: span 1;
+            }
+
+            .risk-indicator {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section id="calculator" class="page">
+        <div class="calculator-container">
+            <div class="page-header">
+                <h2>Diabetes Risk Calculator</h2>
+                <p>Enter your clinical information to assess diabetes risk</p>
+            </div>
+
+            <div class="calculator-card">
+                <div class="calculator-content">
+                    <form id="diabetesForm">
+                        <div class="form-group">
+                            <label for="pregnancies">Pregnancies:</label>
+                            <div class="input-with-icon">
+                                <i class="fas fa-baby"></i>
+                                <input type="number" id="pregnancies" name="pregnancies" min="0" max="20" required>
                             </div>
                         </div>
-                        
-                        <div class="pie-charts-container">
-                            <div class="pie-chart-section">
-                                <h4>Accuracy Breakdown</h4>
-                                <div class="pie-chart-wrapper">
-                                    <div class="pie-chart" id="accuracyPieChart">
-                                        <div class="pie-center">
-                                            <span class="pie-value" id="accuracyPieValue">90%</span>
-                                        </div>
-                                    </div>
-                                    <div class="pie-legend">
-                                        <div class="legend-item">
-                                            <span class="legend-color" style="background: #06D6A0;"></span>
-                                            <span class="legend-label">Correct (180)</span>
-                                        </div>
-                                        <div class="legend-item">
-                                            <span class="legend-color" style="background: #EF476F;"></span>
-                                            <span class="legend-label">Incorrect (20)</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="pie-chart-section">
-                                <h4>Precision Analysis</h4>
-                                <div class="pie-chart-wrapper">
-                                    <div class="pie-chart" id="precisionPieChart">
-                                        <div class="pie-center">
-                                            <span class="pie-value" id="precisionPieValue">79%</span>
-                                        </div>
-                                    </div>
-                                    <div class="pie-legend">
-                                        <div class="legend-item">
-                                            <span class="legend-color" style="background: #2E86AB;"></span>
-                                            <span class="legend-label">True Positives (45)</span>
-                                        </div>
-                                        <div class="legend-item">
-                                            <span class="legend-color" style="background: #FFD166;"></span>
-                                            <span class="legend-label">False Positives (12)</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="pie-chart-section">
-                                <h4>Recall Analysis</h4>
-                                <div class="pie-chart-wrapper">
-                                    <div class="pie-chart" id="recallPieChart">
-                                        <div class="pie-center">
-                                            <span class="pie-value" id="recallPieValue">85%</span>
-                                        </div>
-                                    </div>
-                                    <div class="pie-legend">
-                                        <div class="legend-item">
-                                            <span class="legend-color" style="background: #FF9E64;"></span>
-                                            <span class="legend-label">True Positives (45)</span>
-                                        </div>
-                                        <div class="legend-item">
-                                            <span class="legend-color" style="background: #EF476F;"></span>
-                                            <span class="legend-label">False Negatives (8)</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="pie-chart-section">
-                                <h4>F1-Score Balance</h4>
-                                <div class="pie-chart-wrapper">
-                                    <div class="pie-chart" id="f1PieChart">
-                                        <div class="pie-center">
-                                            <span class="pie-value" id="f1PieValue">82%</span>
-                                        </div>
-                                    </div>
-                                    <div class="pie-legend">
-                                        <div class="legend-item">
-                                            <span class="legend-color" style="background: #9B59B6;"></span>
-                                            <span class="legend-label">Precision (79%)</span>
-                                        </div>
-                                        <div class="legend-item">
-                                            <span class="legend-color" style="background: #8E44AD;"></span>
-                                            <span class="legend-label">Recall (85%)</span>
-                                        </div>
-                                    </div>
-                                </div>
+
+                        <div class="form-group">
+                            <label for="glucose">Glucose (mg/dL):</label>
+                            <div class="input-with-icon">
+                                <i class="fas fa-tint"></i>
+                                <input type="number" id="glucose" name="glucose" min="0" max="300" required>
                             </div>
                         </div>
-                    </div>
+
+                        <div class="form-group">
+                            <label for="bmi">BMI:</label>
+                            <div class="input-with-icon">
+                                <i class="fas fa-weight"></i>
+                                <input type="number" id="bmi" name="bmi" min="10" max="60" step="0.1" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="dpf">Diabetes Pedigree Function:</label>
+                            <div class="input-with-icon">
+                                <i class="fas fa-dna"></i>
+                                <input type="number" id="dpf" name="dpf" min="0" max="2.5" step="0.01" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="age">Age:</label>
+                            <div class="input-with-icon">
+                                <i class="fas fa-birthday-cake"></i>
+                                <input type="number" id="age" name="age" min="21" max="100" required>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="submit-btn">
+                            <i class="fas fa-calculator"></i> Calculate Risk
+                        </button>
+                    </form>
                 </div>
             </div>
-        </section>
+
+            <div class="results-card">
+                <div class="results-header">
+                    <h3>Risk Assessment Results</h3>
+                    <div class="risk-indicator">
+                        <div id="riskLevel" class="risk-level">Enter your data</div>
+                        <div id="riskScore" class="risk-probability">-</div>
+                    </div>
+                </div>
+
+                <div id="riskDescription" class="risk-description">
+                    <p>Fill out the form and click "Calculate Risk" to see your personalized assessment.</p>
+                </div>
+
+                <div class="recommendations">
+                    <h4><i class="fas fa-lightbulb"></i> Recommendations</h4>
+                    <div id="recommendationContent" class="recommendation-content">
+                        <p>Personalized recommendations will appear here after assessment.</p>
+                    </div>
+                </div>
+
+                <div id="loadingSpinner" style="display: none;">
+                    <div class="spinner"></div>
+                    <p style="margin-top: 10px; color: #666;">Analyzing your data...</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        document.getElementById('diabetesForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            // Show loading spinner
+            document.getElementById('loadingSpinner').style.display = 'block';
+
+            // Get input values
+            const pregnancies = parseFloat(document.getElementById('pregnancies').value);
+            const glucose = parseFloat(document.getElementById('glucose').value);
+            const bmi = parseFloat(document.getElementById('bmi').value);
+            const dpf = parseFloat(document.getElementById('dpf').value);
+            const age = parseFloat(document.getElementById('age').value);
+
+            // Simulate API call delay
+            setTimeout(() => {
+                // Hide loading spinner
+                document.getElementById('loadingSpinner').style.display = 'none';
+
+                // Calculate risk score (simplified algorithm)
+                let riskScore = 0;
+
+                // Pregnancies factor
+                if (pregnancies > 3) riskScore += 2;
+                else if (pregnancies > 1) riskScore += 1;
+
+                // Glucose factor
+                if (glucose > 140) riskScore += 3;
+                else if (glucose > 120) riskScore += 2;
+                else if (glucose > 100) riskScore += 1;
+
+                // BMI factor
+                if (bmi > 30) riskScore += 3;
+                else if (bmi > 25) riskScore += 2;
+                else if (bmi > 22) riskScore += 1;
+
+                // Pedigree factor
+                if (dpf > 1.0) riskScore += 2;
+                else if (dpf > 0.5) riskScore += 1;
+
+                // Age factor
+                if (age > 35) riskScore += 2;
+                else if (age > 25) riskScore += 1;
+
+                // Calculate probability percentage
+                const probability = Math.min(100, Math.max(0, (riskScore / 12) * 100));
+
+                // Determine risk level
+                let riskLevel, riskDescription, recommendations;
+                const riskResult = document.getElementById('riskLevel');
+                const riskScoreElement = document.getElementById('riskScore');
+                const riskDescriptionElement = document.getElementById('riskDescription');
+                const recommendationContent = document.getElementById('recommendationContent');
+
+                if (probability <= 30) {
+                    riskLevel = 'Low Risk';
+                    riskDescription = 'Based on the information provided, your risk of developing diabetes appears to be low. Continue with regular health check-ups and maintain a healthy lifestyle.';
+                    recommendations = '<ul><li>Continue regular physical activity (at least 150 minutes per week)</li><li>Maintain a balanced diet rich in fruits, vegetables, and whole grains</li><li>Schedule annual health check-ups</li><li>Monitor your blood sugar levels if you have family history of diabetes</li></ul>';
+                    riskResult.className = 'risk-level low-risk';
+                } else if (probability <= 70) {
+                    riskLevel = 'Medium Risk';
+                    riskDescription = 'Based on the information provided, you have a moderate risk of developing diabetes. Consider speaking with your healthcare provider about preventive measures.';
+                    recommendations = '<ul><li>Increase physical activity to 150-300 minutes per week</li><li>Focus on weight management if needed</li><li>Consider reducing sugar and refined carbohydrate intake</li><li>Discuss screening options with your healthcare provider</li><li>Monitor blood pressure and cholesterol levels</li></ul>';
+                    riskResult.className = 'risk-level medium-risk';
+                } else {
+                    riskLevel = 'High Risk';
+                    riskDescription = 'Based on the information provided, you have a higher risk of developing diabetes. It is recommended to speak with your healthcare provider about appropriate screening and management strategies.';
+                    recommendations = '<ul><li>Consult with a healthcare provider for comprehensive assessment</li><li>Consider glucose tolerance testing</li><li>Implement dietary changes under professional guidance</li><li>Increase physical activity as recommended by your doctor</li><li>Regular monitoring of blood glucose levels</li><li>Weight management program if needed</li></ul>';
+                    riskResult.className = 'risk-level high-risk';
+                }
+
+                // Display results
+                riskResult.textContent = riskLevel;
+                riskScoreElement.textContent = `${probability.toFixed(1)}%`;
+                riskDescriptionElement.innerHTML = `<p>${riskDescription}</p>`;
+                recommendationContent.innerHTML = recommendations;
+            }, 1500); // Simulate 1.5 second processing time
+        });
+    </script>
+</body>
+</html>
 
         <!-- About Page -->
         <section id="about" class="page">
@@ -327,15 +661,221 @@
                     <h2>About Diabetes Predictor</h2>
                     <p>Learn about our mission and methodology</p>
                 </div>
-                
+
                 <div class="about-content">
-                    <!-- Your about cards remain the same -->
+                    <div class="about-card">
+                        <div class="about-icon">
+                            <i class="fas fa-bullseye"></i>
+                        </div>
+                        <h3>Our Mission</h3>
+                        <p>To provide accessible diabetes risk assessment using machine learning and data science principles for early detection and prevention.</p>
+                    </div>
+
+                    <div class="about-card">
+                        <div class="about-icon">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <h3>Data Source</h3>
+                        <p>Our model is trained on the Pima Indians Diabetes Dataset, containing 768 patient records with 8 clinical features.</p>
+                    </div>
+
+                    <div class="about-card">
+                        <div class="about-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h3>Technology</h3>
+                        <p>We use ensemble machine learning methods including XGBoost and Logistic Regression for accurate predictions.</p>
+                    </div>
+ <div class="about-card">
+    <div class="about-icon">
+        <i class="fas fa-shield-alt"></i>
+    </div>
+    <h3>Privacy First</h3>
+    <p>All calculations are performed locally in your browser. No personal data is stored or transmitted to servers.</p>
+</div>
+<div class="about-card">
+    <div class="about-icon">
+        <i class="fas fa-child"></i>
+    </div>
+    <h3>Creators</h3>
+    <div class="creators-list">
+        <div class="creator">Alexia Wheatley</div>
+        <div class="creator">Katlego Mathe</div>
+        <div class="creator">Kayleigh Gourrah</div>
+        <div class="creator">Mohau Mabilane</div>
+        <div class="creator">Resego Ngwenya</div>
+        <div class="creator">Reabetswe Aphane</div>
+    </div>
+</div>
+                <div class="disclaimer">
+                    <h4>Important Disclaimer</h4>
+                    <p>This tool is for educational and informational purposes only. It is not a substitute for professional medical advice, diagnosis, or treatment. Always consult healthcare professionals for medical concerns.</p>
                 </div>
             </div>
         </section>
     </main>
 
     <script src="script.js"></script>
+    <!-- <script src="calculator.js"></script> -->
     <script src="calculator.js"></script>
+
+    <!-- Recommendations Popup -->
+<div id="recommendationsModal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn">&times;</span>
+
+        <div class="risk-header" id="riskHeader">
+            <h2>Your Diabetes Risk Assessment</h2>
+            <div class="risk-badge" id="riskBadge">
+                <span id="riskLevelText">Low Risk</span>
+            </div>
+        </div>
+
+        <div class="recommendations-container">
+            <!-- High Risk Recommendations -->
+            <div class="risk-category high-risk" id="highRiskRecs">
+                <div class="category-header">
+                    <h3>🔴 High Risk Recommendations</h3>
+                    <p class="risk-score">Risk Score: <span id="highRiskScore">0%</span></p>
+                </div>
+                <div class="recommendation-list">
+                    <div class="rec-item urgent">
+                       <h4><i class="fa-solid fa-stethoscope" aria-hidden="true"></i>
+  <span class="sr-only">Stethoscope icon</span>
+  Immediate Medical Actions
+</h4>
+                        <ul>
+                            <li>Schedule doctor appointment within 1 week</li>
+                            <li>Request HbA1c and glucose tolerance tests</li>
+                            <li>Discuss family history with physician</li>
+                        </ul>
+                    </div>
+                    <div class="rec-item">
+                        <h4>
+  <i class="fa-solid fa-apple-whole" style="margin-right:8px; color:#d94f4f;"></i>
+  Lifestyle Changes
+</h4>
+                        <ul>
+                            <li>Reduce sugar and refined carbs by 80%</li>
+                            <li>30 minutes daily exercise</li>
+                            <li>Aim for 5-7% weight loss if overweight</li>
+                        </ul>
+                    </div>
+                    <div class="rec-item">
+                        <h4>
+  <i class="fa-solid fa-chart-line" style="margin-right:8px; color:#2b6cb0;"></i>
+  Monitoring
+</h4>
+                        <ul>
+                            <li>Weekly blood pressure checks</li>
+                            <li>Consider blood glucose monitoring</li>
+                            <li>Follow-up every 3-6 months</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Medium Risk Recommendations -->
+            <div class="risk-category medium-risk" id="mediumRiskRecs">
+                <div class="category-header">
+                    <h3>🟡 Medium Risk Recommendations</h3>
+                    <p class="risk-score">Risk Score: <span id="mediumRiskScore">0%</span></p>
+                </div>
+                <div class="recommendation-list">
+                    <div class="rec-item">
+                        <h4>
+  <i class="fa-solid fa-hospital" style="margin-right:8px; color:#1e90ff;"></i>
+  Health Assessment
+</h4>
+                        <ul>
+                            <li>Annual physical examination</li>
+                            <li>Baseline blood tests (glucose, lipids)</li>
+                            <li>Cardiovascular risk assessment</li>
+                        </ul>
+                    </div>
+                    <div class="rec-item">
+                        <h4>
+  <i class="fa-solid fa-leaf" style="margin-right:8px; color:#4CAF50;"></i>
+  Lifestyle Modifications
+</h4>
+                        <ul>
+                            <li>Limit added sugars to <25g daily</li>
+                            <li>150 minutes moderate activity weekly</li>
+                            <li>Increase vegetables to 5+ servings daily</li>
+                        </ul>
+                    </div>
+                    <div class="rec-item">
+                        <h4>
+  <i class="fa-solid fa-bullseye" style="margin-right:8px; color:#e63946;"></i>
+  Prevention Program
+</h4>
+                        <ul>
+                            <li>Join diabetes prevention program</li>
+                            <li>Set specific health goals</li>
+                            <li>Regular self-monitoring</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Low Risk Recommendations -->
+            <div class="risk-category low-risk" id="lowRiskRecs">
+                <div class="category-header">
+                    <h3>🟢 Low Risk Recommendations</h3>
+                    <p class="risk-score">Risk Score: <span id="lowRiskScore">0%</span></p>
+                </div>
+                <div class="recommendation-list">
+                    <div class="rec-item">
+                        <h4>
+  <i class="fa-solid fa-dumbbell" style="margin-right:8px; color:#6366f1;"></i>
+  Maintenance
+</h4>
+                        <ul>
+                            <li>Continue balanced diet and exercise</li>
+                            <li>Maintain healthy weight</li>
+                            <li>Annual health check-ups</li>
+                        </ul>
+                    </div>
+                    <div class="rec-item">
+                        <h4>
+  <i class="fa-solid fa-book-open" style="margin-right:8px; color:#f59e0b;"></i>
+  Education
+</h4>
+                        <ul>
+                            <li>Learn early warning signs</li>
+                            <li>Stay informed about prevention</li>
+                            <li>Understand healthy aging strategies</li>
+                        </ul>
+                    </div>
+                    <div class="rec-item">
+                        <h4>
+  <i class="fa-solid fa-bullseye" style="margin-right:8px; color:#e63946;"></i>
+  Prevention Program
+</h4>
+                        <ul>
+                            <li>Reassess risk annually</li>
+                            <li>Monitor family history updates</li>
+                            <li>Maintain vaccination schedule</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="action-buttons">
+            <button class="btn-print" onclick="printRecommendations()">Print Recommendations</button>
+            <button class="btn-close" onclick="closeRecommendations()">Close</button>
+        </div>
+    </div>
+</div>
 </body>
+    <!-- Add this right before closing </body> tag -->
+<script>
+console.log("🔍 Debug: Checking if elements exist...");
+console.log("diabetesForm:", document.getElementById('diabetesForm'));
+console.log("riskLevel:", document.getElementById('riskLevel'));
+console.log("riskScore:", document.getElementById('riskScore'));
+console.log("riskDescription:", document.getElementById('riskDescription'));
+console.log("recommendationContent:", document.getElementById('recommendationContent'));
+</script>
 </html>
