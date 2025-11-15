@@ -1870,3 +1870,263 @@ body {
         font-size: 11px;
     }
 }
+
+/* Calculator Container */
+.calculator-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Calculator Card */
+.calculator-card {
+    background: var(--white);
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.calculator-content {
+    display: flex;
+    flex-direction: column;
+}
+
+#diabetesForm {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-with-icon {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.input-with-icon i {
+    position: absolute;
+    left: 15px;
+    font-size: 18px;
+    color: var(--primary-blue);
+    z-index: 1;
+}
+
+.form-group label {
+    margin-bottom: 8px;
+    color: var(--dark-blue);
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px 15px 12px 45px;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    font-size: 16px;
+    transition: all 0.3s;
+}
+
+.form-group input:focus {
+    border-color: var(--primary-blue);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(46, 134, 171, 0.2);
+}
+
+.submit-btn {
+    grid-column: span 2;
+    background: var(--primary-blue);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 18px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-top: 10px;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.submit-btn i {
+    margin-right: 10px;
+}
+
+.submit-btn:hover {
+    background: var(--dark-blue);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(46, 134, 171, 0.4);
+}
+
+/* Results Card */
+.results-card {
+    background: var(--white);
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.results-header {
+    text-align: center;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.results-header h3 {
+    color: var(--dark-blue);
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.risk-indicator {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.risk-level {
+    font-size: 24px;
+    font-weight: 700;
+    padding: 10px 20px;
+    border-radius: 10px;
+    background: var(--light-gray);
+    color: var(--medium-gray);
+}
+
+.risk-probability {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--dark-blue);
+}
+
+.risk-description {
+    margin-bottom: 25px;
+    padding: 15px;
+    background: var(--light-gray);
+    border-radius: 10px;
+    color: var(--medium-gray);
+    line-height: 1.6;
+}
+
+.recommendations {
+    margin-top: 25px;
+    padding-top: 25px;
+    border-top: 1px solid #eee;
+}
+
+.recommendations h4 {
+    color: var(--dark-blue);
+    margin-bottom: 15px;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.recommendations h4 i {
+    color: var(--warning);
+    margin-right: 10px;
+}
+
+.recommendation-content {
+    background: var(--light-gray);
+    padding: 15px;
+    border-radius: 10px;
+    color: var(--medium-gray);
+    line-height: 1.6;
+}
+
+.recommendation-content ul {
+    padding-left: 20px;
+}
+
+.recommendation-content li {
+    margin-bottom: 8px;
+}
+
+.low-risk {
+    color: var(--success);
+    background: rgba(6, 214, 160, 0.1) !important;
+}
+
+.medium-risk {
+    color: var(--warning);
+    background: rgba(255, 209, 102, 0.1) !important;
+}
+
+.high-risk {
+    color: var(--danger);
+    background: rgba(239, 71, 111, 0.1) !important;
+}
+
+#loadingSpinner {
+    text-align: center;
+    padding: 20px;
+}
+
+.spinner {
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid var(--primary-blue);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 2s linear infinite;
+    margin: 0 auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Metrics Card Styles */
+.metrics-card {
+    background: var(--white);
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    width: 100%;
+}
+
+.metrics-header {
+    text-align: center;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid var(--light-gray);
+}
+
+.metrics-header h3 {
+    color: var(--dark-blue);
+    font-size: 24px;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.metrics-header p {
+    color: var(--medium-gray);
+    font-size: 16px;
+}
+
+.metrics-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    align-items: start;
+}
