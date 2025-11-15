@@ -1628,231 +1628,245 @@ body {
 }
 </style>
 
-/* Metrics Card Styles */
-.metrics-card {
-    background: var(--white);
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    padding: 30px;
-    width: 100%;
-    margin-top: 30px;
-}
-
-.metrics-header {
-    text-align: center;
-    margin-bottom: 25px;
-    padding-bottom: 15px;
-    border-bottom: 2px solid var(--light-gray);
-}
-
-.metrics-header h3 {
-    color: var(--dark-blue);
-    font-size: 24px;
-    margin-bottom: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-}
-
-.metrics-header p {
-    color: var(--medium-gray);
-    font-size: 16px;
-}
-
-.metrics-container {
+* Pie Charts Container */
+.pie-charts-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 30px;
-    align-items: start;
+    gap: 20px;
 }
 
-/* Confusion Matrix Styles */
-.confusion-matrix {
-    background: var(--light-gray);
-    padding: 20px;
-    border-radius: 10px;
-    border: 2px solid var(--light-blue);
-}
-
-.confusion-matrix h4 {
-    color: var(--dark-blue);
-    text-align: center;
-    margin-bottom: 20px;
-    font-size: 18px;
-}
-
-.matrix-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 2px;
-    background: var(--medium-gray);
-    border: 2px solid var(--medium-gray);
-}
-
-.matrix-cell {
-    background: var(--white);
-    padding: 12px 8px;
-    text-align: center;
-    font-weight: 600;
-    min-height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.matrix-cell.header {
-    background: var(--dark-blue);
-    color: var(--white);
-    font-weight: 700;
-}
-
-.true-positive {
-    background: rgba(6, 214, 160, 0.2);
-    color: var(--success);
-    border: 2px solid var(--success);
-}
-
-.false-negative {
-    background: rgba(239, 71, 111, 0.2);
-    color: var(--danger);
-    border: 2px solid var(--danger);
-}
-
-.false-positive {
-    background: rgba(255, 209, 102, 0.2);
-    color: var(--warning);
-    border: 2px solid var(--warning);
-}
-
-.true-negative {
-    background: rgba(46, 134, 171, 0.2);
-    color: var(--primary-blue);
-    border: 2px solid var(--primary-blue);
-}
-
-/* Performance Metrics Styles */
-.performance-metrics {
-    background: var(--light-gray);
-    padding: 20px;
-    border-radius: 10px;
-    border: 2px solid var(--light-blue);
-}
-
-.performance-metrics h4 {
-    color: var(--dark-blue);
-    text-align: center;
-    margin-bottom: 20px;
-    font-size: 18px;
-}
-
-.metric-bars {
-    margin-bottom: 25px;
-}
-
-.metric-item {
-    margin-bottom: 20px;
-}
-
-.metric-item label {
-    display: block;
-    margin-bottom: 8px;
-    color: var(--dark-blue);
-    font-weight: 600;
-    font-size: 14px;
-}
-
-.metric-bar {
-    background: var(--white);
-    height: 30px;
-    border-radius: 15px;
-    position: relative;
-    overflow: hidden;
-    border: 2px solid var(--light-blue);
-}
-
-.metric-fill {
-    height: 100%;
-    border-radius: 13px;
-    transition: width 0.5s ease-in-out;
-    position: relative;
-}
-
-.metric-item:nth-child(1) .metric-fill {
-    background: linear-gradient(90deg, var(--success), #4CD964);
-}
-
-.metric-item:nth-child(2) .metric-fill {
-    background: linear-gradient(90deg, var(--primary-blue), #3498db);
-}
-
-.metric-item:nth-child(3) .metric-fill {
-    background: linear-gradient(90deg, var(--warning), #FFB347);
-}
-
-.metric-item:nth-child(4) .metric-fill {
-    background: linear-gradient(90deg, #9B59B6, #8E44AD);
-}
-
-.metric-value {
-    position: absolute;
-    right: 15px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: var(--dark-gray);
-    font-weight: 700;
-    font-size: 14px;
-    text-shadow: 1px 1px 2px rgba(255,255,255,0.8);
-}
-
-.metric-explanation {
+.pie-chart-section {
     background: var(--white);
     padding: 15px;
-    border-radius: 8px;
+    border-radius: 10px;
+    border: 2px solid var(--light-blue);
+    text-align: center;
+}
+
+.pie-chart-section h4 {
+    color: var(--dark-blue);
+    margin-bottom: 15px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.pie-chart-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Pie Chart Styles */
+.pie-chart {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    position: relative;
+    background: conic-gradient(
+        var(--color) calc(var(--percentage) * 360deg),
+        transparent 0
+    );
+}
+
+.pie-chart::before {
+    content: '';
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    background: var(--white);
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.pie-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 2;
+}
+
+.pie-value {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--dark-blue);
+}
+
+/* Pie Chart Segments - Using conic-gradient with CSS variables */
+.pie-chart.multi-segment {
+    background: conic-gradient(
+        var(--color1) calc(var(--percentage1) * 360deg),
+        var(--color2) 0 calc((var(--percentage1) + var(--percentage2)) * 360deg),
+        var(--color3) 0 calc((var(--percentage1) + var(--percentage2) + var(--percentage3)) * 360deg),
+        var(--color4) 0
+    );
+}
+
+/* Pie Legend */
+.pie-legend {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+}
+
+.legend-color {
+    width: 12px;
+    height: 12px;
+    border-radius: 3px;
+    flex-shrink: 0;
+}
+
+.legend-label {
+    color: var(--medium-gray);
+    font-weight: 500;
+}
+
+/* Matrix Totals */
+.matrix-totals {
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid var(--light-blue);
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.total-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+}
+
+.total-label {
+    font-size: 12px;
+    color: var(--medium-gray);
+    margin-bottom: 4px;
+}
+
+.total-value {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--dark-blue);
+}
+
+/* Metric Explanation */
+.metric-explanation {
+    grid-column: 1 / -1;
+    background: var(--white);
+    padding: 20px;
+    border-radius: 10px;
     border-left: 4px solid var(--primary-blue);
+    margin-top: 20px;
 }
 
 .metric-explanation h5 {
     color: var(--dark-blue);
-    margin-bottom: 10px;
+    margin-bottom: 12px;
     font-size: 16px;
+    text-align: center;
 }
 
-.metric-explanation ul {
-    list-style: none;
-    padding: 0;
+.metric-explanation-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
 }
 
-.metric-explanation li {
-    padding: 5px 0;
-    color: var(--medium-gray);
-    font-size: 14px;
-    line-height: 1.4;
+.metric-definition {
+    padding: 10px;
+    background: var(--light-gray);
+    border-radius: 6px;
+    border-left: 3px solid var(--primary-blue);
 }
 
-.metric-explanation strong {
+.metric-definition h6 {
     color: var(--dark-blue);
+    margin-bottom: 5px;
+    font-size: 14px;
 }
 
-/* Mobile Responsive for Metrics */
+.metric-definition p {
+    color: var(--medium-gray);
+    font-size: 12px;
+    line-height: 1.4;
+    margin: 0;
+}
+
+/* Mobile Responsive for Pie Charts */
+@media (max-width: 1024px) {
+    .pie-charts-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .pie-chart-section {
+        padding: 12px;
+    }
+    
+    .pie-chart {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .pie-chart::before {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .pie-value {
+        font-size: 12px;
+    }
+}
+
 @media (max-width: 768px) {
     .metrics-container {
         grid-template-columns: 1fr;
         gap: 20px;
     }
     
-    .matrix-cell {
-        padding: 8px 4px;
-        font-size: 12px;
-        min-height: 40px;
+    .pie-charts-container {
+        grid-template-columns: 1fr 1fr;
     }
     
-    .metric-bar {
-        height: 25px;
+    .metric-explanation-content {
+        grid-template-columns: 1fr;
     }
     
-    .metric-value {
-        font-size: 12px;
-        right: 10px;
+    .matrix-totals {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .pie-charts-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .pie-chart {
+        width: 90px;
+        height: 90px;
+    }
+    
+    .pie-chart::before {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .legend-item {
+        font-size: 11px;
     }
 }
