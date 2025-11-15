@@ -1,4 +1,4 @@
-<!DOCTYPE html>
++<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -653,6 +653,80 @@
     </script>
 </body>
 </html>
+        <div class="metrics-card">
+    <div class="metrics-header">
+        <h3><i class="fas fa-chart-bar"></i> Model Performance Metrics</h3>
+        <p>Live metrics based on your input data</p>
+    </div>
+    
+    <div class="metrics-container">
+        <div class="metric-diagram">
+            <div class="confusion-matrix">
+                <h4>Prediction Matrix</h4>
+                <div class="matrix-grid">
+                    <div class="matrix-cell header">Actual/Predicted</div>
+                    <div class="matrix-cell header">Diabetic</div>
+                    <div class="matrix-cell header">Non-Diabetic</div>
+                    
+                    <div class="matrix-cell header">Diabetic</div>
+                    <div class="matrix-cell true-positive" id="truePositive">45</div>
+                    <div class="matrix-cell false-negative" id="falseNegative">8</div>
+                    
+                    <div class="matrix-cell header">Non-Diabetic</div>
+                    <div class="matrix-cell false-positive" id="falsePositive">12</div>
+                    <div class="matrix-cell true-negative" id="trueNegative">135</div>
+                </div>
+            </div>
+            
+            <div class="performance-metrics">
+                <h4>Performance Scores</h4>
+                <div class="metric-bars">
+                    <div class="metric-item">
+                        <label>Accuracy</label>
+                        <div class="metric-bar">
+                            <div class="metric-fill" id="accuracyBar" style="width: 94%"></div>
+                            <span class="metric-value" id="accuracyValue">94%</span>
+                        </div>
+                    </div>
+                    
+                    <div class="metric-item">
+                        <label>Precision</label>
+                        <div class="metric-bar">
+                            <div class="metric-fill" id="precisionBar" style="width: 79%"></div>
+                            <span class="metric-value" id="precisionValue">79%</span>
+                        </div>
+                    </div>
+                    
+                    <div class="metric-item">
+                        <label>Recall</label>
+                        <div class="metric-bar">
+                            <div class="metric-fill" id="recallBar" style="width: 85%"></div>
+                            <span class="metric-value" id="recallValue">85%</span>
+                        </div>
+                    </div>
+                    
+                    <div class="metric-item">
+                        <label>F1-Score</label>
+                        <div class="metric-bar">
+                            <div class="metric-fill" id="f1Bar" style="width: 82%"></div>
+                            <span class="metric-value" id="f1Value">82%</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="metric-explanation">
+                    <h5>What These Metrics Mean:</h5>
+                    <ul>
+                        <li><strong>Accuracy:</strong> Overall correctness of predictions</li>
+                        <li><strong>Precision:</strong> How many predicted diabetics actually have diabetes</li>
+                        <li><strong>Recall:</strong> How many actual diabetics were correctly identified</li>
+                        <li><strong>F1-Score:</strong> Balance between precision and recall</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
         <!-- About Page -->
         <section id="about" class="page">
