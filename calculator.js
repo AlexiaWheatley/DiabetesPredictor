@@ -1,6 +1,16 @@
 document.addEventListener('DOMContentLoaded', function() {
     const form = document.getElementById('diabetesForm');
     
+    // Initialize metrics
+    setupRealTimeMetrics();
+    updatePerformanceMetrics({
+        pregnancies: 0,
+        glucose: 0,
+        bmi: 0,
+        dpf: 0,
+        age: 0
+    });
+    
     form.addEventListener('submit', async function(e) {
         e.preventDefault();
         
@@ -22,6 +32,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 dpf: document.getElementById('dpf').value || 0,
                 age: document.getElementById('age').value || 0
             };
+            
+            // Update metrics with final values
+            updatePerformanceMetrics(formData);
             
             // Send to backend
             const response = await fetch('http://localhost:5000/predict', {
@@ -120,7 +133,6 @@ function updatePerformanceMetrics(formData) {
 function updatePieCharts(accuracy, precision, recall, f1, tp, fp, fn, correct, total) {
     // Accuracy Pie Chart
     const accuracyCorrect = accuracy / 100;
-    const accuracyIncorrect = 1 - accuracyCorrect;
     
     document.getElementById('accuracyPieChart').style.background = `conic-gradient(
         #06D6A0 0 ${accuracyCorrect * 360}deg,
@@ -129,14 +141,16 @@ function updatePieCharts(accuracy, precision, recall, f1, tp, fp, fn, correct, t
     document.getElementById('accuracyPieValue').textContent = accuracy.toFixed(1) + '%';
     
     // Update accuracy legend
-    document.querySelector('#accuracyPieChart + .pie-legend .legend-item:nth-child(1) .legend-label').textContent = 
-        `Correct (${correct})`;
-    document.querySelector('#accuracyPieChart + .pie-legend .legend-item:nth-child(2) .legend-label').textContent = 
-        `Incorrect (${total - correct})`;
+    const accuracyLegendItems = document.querySelectorAll('#accuracyPieChart + .pie-legend .legend-item');
+    if (accuracyLegendItems[0]) {
+        accuracyLegendItems[0].querySelector('.legend-label').textContent = `Correct (${correct})`;
+    }
+    if (accuracyLegendItems[1]) {
+        accuracyLegendItems[1].querySelector('.legend-label').textContent = `Incorrect (${total - correct})`;
+    }
     
     // Precision Pie Chart
     const precisionRate = precision / 100;
-    const falsePositiveRate = 1 - precisionRate;
     
     document.getElementById('precisionPieChart').style.background = `conic-gradient(
         #2E86AB 0 ${precisionRate * 360}deg,
@@ -145,14 +159,16 @@ function updatePieCharts(accuracy, precision, recall, f1, tp, fp, fn, correct, t
     document.getElementById('precisionPieValue').textContent = precision.toFixed(1) + '%';
     
     // Update precision legend
-    document.querySelector('#precisionPieChart + .pie-legend .legend-item:nth-child(1) .legend-label').textContent = 
-        `True Positives (${tp})`;
-    document.querySelector('#precisionPieChart + .pie-legend .legend-item:nth-child(2) .legend-label').textContent = 
-        `False Positives (${fp})`;
+    const precisionLegendItems = document.querySelectorAll('#precisionPieChart + .pie-legend .legend-item');
+    if (precisionLegendItems[0]) {
+        precisionLegendItems[0].querySelector('.legend-label').textContent = `True Positives (${tp})`;
+    }
+    if (precisionLegendItems[1]) {
+        precisionLegendItems[1].querySelector('.legend-label').textContent = `False Positives (${fp})`;
+    }
     
     // Recall Pie Chart
     const recallRate = recall / 100;
-    const falseNegativeRate = 1 - recallRate;
     
     document.getElementById('recallPieChart').style.background = `conic-gradient(
         #FF9E64 0 ${recallRate * 360}deg,
@@ -161,14 +177,16 @@ function updatePieCharts(accuracy, precision, recall, f1, tp, fp, fn, correct, t
     document.getElementById('recallPieValue').textContent = recall.toFixed(1) + '%';
     
     // Update recall legend
-    document.querySelector('#recallPieChart + .pie-legend .legend-item:nth-child(1) .legend-label').textContent = 
-        `True Positives (${tp})`;
-    document.querySelector('#recallPieChart + .pie-legend .legend-item:nth-child(2) .legend-label').textContent = 
-        `False Negatives (${fn})`;
+    const recallLegendItems = document.querySelectorAll('#recallPieChart + .pie-legend .legend-item');
+    if (recallLegendItems[0]) {
+        recallLegendItems[0].querySelector('.legend-label').textContent = `True Positives (${tp})`;
+    }
+    if (recallLegendItems[1]) {
+        recallLegendItems[1].querySelector('.legend-label').textContent = `False Negatives (${fn})`;
+    }
     
     // F1-Score Pie Chart (showing balance between precision and recall)
     const precisionWeight = precision / (precision + recall);
-    const recallWeight = recall / (precision + recall);
     
     document.getElementById('f1PieChart').style.background = `conic-gradient(
         #9B59B6 0 ${precisionWeight * 360}deg,
@@ -177,15 +195,20 @@ function updatePieCharts(accuracy, precision, recall, f1, tp, fp, fn, correct, t
     document.getElementById('f1PieValue').textContent = f1.toFixed(1) + '%';
     
     // Update F1 legend
-    document.querySelector('#f1PieChart + .pie-legend .legend-item:nth-child(1) .legend-label').textContent = 
-        `Precision (${precision.toFixed(1)}%)`;
-    document.querySelector('#f1PieChart + .pie-legend .legend-item:nth-child(2) .legend-label').textContent = 
-        `Recall (${recall.toFixed(1)}%)`;
+    const f1LegendItems = document.querySelectorAll('#f1PieChart + .pie-legend .legend-item');
+    if (f1LegendItems[0]) {
+        f1LegendItems[0].querySelector('.legend-label').textContent = `Precision (${precision.toFixed(1)}%)`;
+    }
+    if (f1LegendItems[1]) {
+        f1LegendItems[1].querySelector('.legend-label').textContent = `Recall (${recall.toFixed(1)}%)`;
+    }
 }
 
 // Real-time updates
 function setupRealTimeMetrics() {
     const form = document.getElementById('diabetesForm');
+    if (!form) return;
+    
     const inputs = form.querySelectorAll('input[type="number"]');
     
     inputs.forEach(input => {
@@ -204,16 +227,3 @@ function setupRealTimeMetrics() {
         });
     });
 }
-
-// Initialize
-document.addEventListener('DOMContentLoaded', function() {
-    setupRealTimeMetrics();
-    updatePerformanceMetrics({
-        pregnancies: 0,
-        glucose: 0,
-        bmi: 0,
-        dpf: 0,
-        age: 0
-    });
-});
-});
