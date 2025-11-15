@@ -653,81 +653,137 @@
     </script>
 </body>
 </html>
+        <!-- Metrics-card -->
         <div class="metrics-card">
     <div class="metrics-header">
-        <h3><i class="fas fa-chart-bar"></i> Model Performance Metrics</h3>
-        <p>Live metrics based on your input data</p>
+        <h3><i class="fas fa-chart-pie"></i> Model Performance Analysis</h3>
+        <p>Live metrics visualization based on your input data</p>
     </div>
     
     <div class="metrics-container">
-        <div class="metric-diagram">
-            <div class="confusion-matrix">
-                <h4>Prediction Matrix</h4>
-                <div class="matrix-grid">
-                    <div class="matrix-cell header">Actual/Predicted</div>
-                    <div class="matrix-cell header">Diabetic</div>
-                    <div class="matrix-cell header">Non-Diabetic</div>
-                    
-                    <div class="matrix-cell header">Diabetic</div>
-                    <div class="matrix-cell true-positive" id="truePositive">45</div>
-                    <div class="matrix-cell false-negative" id="falseNegative">8</div>
-                    
-                    <div class="matrix-cell header">Non-Diabetic</div>
-                    <div class="matrix-cell false-positive" id="falsePositive">12</div>
-                    <div class="matrix-cell true-negative" id="trueNegative">135</div>
+        <div class="confusion-matrix">
+            <h4>Prediction Distribution</h4>
+            <div class="matrix-grid">
+                <div class="matrix-cell header">Actual/Predicted</div>
+                <div class="matrix-cell header">Diabetic</div>
+                <div class="matrix-cell header">Non-Diabetic</div>
+                
+                <div class="matrix-cell header">Diabetic</div>
+                <div class="matrix-cell true-positive" id="truePositive">45</div>
+                <div class="matrix-cell false-negative" id="falseNegative">8</div>
+                
+                <div class="matrix-cell header">Non-Diabetic</div>
+                <div class="matrix-cell false-positive" id="falsePositive">12</div>
+                <div class="matrix-cell true-negative" id="trueNegative">135</div>
+            </div>
+            
+            <div class="matrix-totals">
+                <div class="total-item">
+                    <span class="total-label">Total Predictions:</span>
+                    <span class="total-value" id="totalPredictions">200</span>
+                </div>
+                <div class="total-item">
+                    <span class="total-label">Correct Predictions:</span>
+                    <span class="total-value" id="correctPredictions">180</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="pie-charts-container">
+            <div class="pie-chart-section">
+                <h4>Accuracy Breakdown</h4>
+                <div class="pie-chart-wrapper">
+                    <div class="pie-chart" id="accuracyPieChart">
+                        <div class="pie-segment correct" style="--percentage: 0.9; --color: #06D6A0;"></div>
+                        <div class="pie-segment incorrect" style="--percentage: 0.1; --color: #EF476F;"></div>
+                        <div class="pie-center">
+                            <span class="pie-value" id="accuracyPieValue">90%</span>
+                        </div>
+                    </div>
+                    <div class="pie-legend">
+                        <div class="legend-item">
+                            <span class="legend-color" style="background: #06D6A0;"></span>
+                            <span class="legend-label">Correct (180)</span>
+                        </div>
+                        <div class="legend-item">
+                            <span class="legend-color" style="background: #EF476F;"></span>
+                            <span class="legend-label">Incorrect (20)</span>
+                        </div>
+                    </div>
                 </div>
             </div>
             
-            <div class="performance-metrics">
-                <h4>Performance Scores</h4>
-                <div class="metric-bars">
-                    <div class="metric-item">
-                        <label>Accuracy</label>
-                        <div class="metric-bar">
-                            <div class="metric-fill" id="accuracyBar" style="width: 94%"></div>
-                            <span class="metric-value" id="accuracyValue">94%</span>
+            <div class="pie-chart-section">
+                <h4>Precision Analysis</h4>
+                <div class="pie-chart-wrapper">
+                    <div class="pie-chart" id="precisionPieChart">
+                        <div class="pie-segment true-positives" style="--percentage: 0.79; --color: #2E86AB;"></div>
+                        <div class="pie-segment false-positives" style="--percentage: 0.21; --color: #FFD166;"></div>
+                        <div class="pie-center">
+                            <span class="pie-value" id="precisionPieValue">79%</span>
                         </div>
                     </div>
-                    
-                    <div class="metric-item">
-                        <label>Precision</label>
-                        <div class="metric-bar">
-                            <div class="metric-fill" id="precisionBar" style="width: 79%"></div>
-                            <span class="metric-value" id="precisionValue">79%</span>
+                    <div class="pie-legend">
+                        <div class="legend-item">
+                            <span class="legend-color" style="background: #2E86AB;"></span>
+                            <span class="legend-label">True Positives (45)</span>
                         </div>
-                    </div>
-                    
-                    <div class="metric-item">
-                        <label>Recall</label>
-                        <div class="metric-bar">
-                            <div class="metric-fill" id="recallBar" style="width: 85%"></div>
-                            <span class="metric-value" id="recallValue">85%</span>
-                        </div>
-                    </div>
-                    
-                    <div class="metric-item">
-                        <label>F1-Score</label>
-                        <div class="metric-bar">
-                            <div class="metric-fill" id="f1Bar" style="width: 82%"></div>
-                            <span class="metric-value" id="f1Value">82%</span>
+                        <div class="legend-item">
+                            <span class="legend-color" style="background: #FFD166;"></span>
+                            <span class="legend-label">False Positives (12)</span>
                         </div>
                     </div>
                 </div>
-                
-                <div class="metric-explanation">
-                    <h5>What These Metrics Mean:</h5>
-                    <ul>
-                        <li><strong>Accuracy:</strong> Overall correctness of predictions</li>
-                        <li><strong>Precision:</strong> How many predicted diabetics actually have diabetes</li>
-                        <li><strong>Recall:</strong> How many actual diabetics were correctly identified</li>
-                        <li><strong>F1-Score:</strong> Balance between precision and recall</li>
-                    </ul>
+            </div>
+            
+            <div class="pie-chart-section">
+                <h4>Recall Analysis</h4>
+                <div class="pie-chart-wrapper">
+                    <div class="pie-chart" id="recallPieChart">
+                        <div class="pie-segment true-positives" style="--percentage: 0.85; --color: #FF9E64;"></div>
+                        <div class="pie-segment false-negatives" style="--percentage: 0.15; --color: #EF476F;"></div>
+                        <div class="pie-center">
+                            <span class="pie-value" id="recallPieValue">85%</span>
+                        </div>
+                    </div>
+                    <div class="pie-legend">
+                        <div class="legend-item">
+                            <span class="legend-color" style="background: #FF9E64;"></span>
+                            <span class="legend-label">True Positives (45)</span>
+                        </div>
+                        <div class="legend-item">
+                            <span class="legend-color" style="background: #EF476F;"></span>
+                            <span class="legend-label">False Negatives (8)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="pie-chart-section">
+                <h4>F1-Score Balance</h4>
+                <div class="pie-chart-wrapper">
+                    <div class="pie-chart" id="f1PieChart">
+                        <div class="pie-segment precision" style="--percentage: 0.5; --color: #9B59B6;"></div>
+                        <div class="pie-segment recall" style="--percentage: 0.5; --color: #8E44AD;"></div>
+                        <div class="pie-center">
+                            <span class="pie-value" id="f1PieValue">82%</span>
+                        </div>
+                    </div>
+                    <div class="pie-legend">
+                        <div class="legend-item">
+                            <span class="legend-color" style="background: #9B59B6;"></span>
+                            <span class="legend-label">Precision (79%)</span>
+                        </div>
+                        <div class="legend-item">
+                            <span class="legend-color" style="background: #8E44AD;"></span>
+                            <span class="legend-label">Recall (85%)</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-
         <!-- About Page -->
         <section id="about" class="page">
             <div class="page-content">
