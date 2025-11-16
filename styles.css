@@ -391,6 +391,192 @@ body {
     padding: 15px;
 }
 
+.calculator-content-wrapper {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .calculator-card {
+            flex: 1;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+        }
+
+        .metrics-panel {
+            flex: 1;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+        }
+
+        .metrics-panel h3 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            text-align: center;
+            font-size: 24px;
+        }
+
+        .charts-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .chart-container {
+            text-align: center;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 10px;
+        }
+
+        .chart-title {
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #2c3e50;
+            font-size: 14px;
+        }
+
+        .chart-container canvas {
+            max-height: 120px;
+            margin: 0 auto;
+        }
+
+        .metric-value {
+            font-weight: bold;
+            font-size: 16px;
+            margin-top: 8px;
+            color: #1a5276;
+        }
+
+        @media (max-width: 768px) {
+            .calculator-content-wrapper {
+                flex-direction: column;
+            }
+            
+            .charts-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Keep all your existing calculator styles below */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .calculator-container {
+            width: 100%;
+            max-width: 1200px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 30px;
+            width: 100%;
+        }
+
+        .page-header h2 {
+            color: #2c3e50;
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .page-header p {
+            color: #7f8c8d;
+            font-size: 18px;
+        }
+
+        #diabetesForm {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .input-with-icon {
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+
+        .input-with-icon i {
+            position: absolute;
+            left: 15px;
+            font-size: 18px;
+            color: #3498db;
+            z-index: 1;
+        }
+
+        .form-group label {
+            margin-bottom: 8px;
+            color: #2c3e50;
+            font-weight: 600;
+            font-size: 16px;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px 15px 12px 45px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-size: 16px;
+            transition: all 0.3s;
+        }
+
+        .form-group input:focus {
+            border-color: #3498db;
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+        }
+
+        .submit-btn {
+            grid-column: span 2;
+            background: #3498db;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 18px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-top: 10px;
+            font-weight: 600;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .submit-btn i {
+            margin-right: 10px;
+        }
+
+        .submit-btn:hover {
+            background: #2980b9;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.4);
+        }
 /* Results Card */
 .results-card {
     background: var(--white);
