@@ -219,6 +219,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Diabetes Risk Calculator</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
         * {
             margin: 0;
@@ -543,6 +544,32 @@
                     </form>
                 </div>
             </div>
+<div class="metrics-panel">
+                        <h3>Model Performance Metrics</h3>
+                        <div class="charts-grid">
+                            <div class="chart-container">
+                                <div class="chart-title">Accuracy</div>
+                                <canvas id="accuracyChart"></canvas>
+                                <div class="metric-value" id="accuracyValue">85%</div>
+                            </div>
+                            <div class="chart-container">
+                                <div class="chart-title">F1 Score</div>
+                                <canvas id="f1Chart"></canvas>
+                                <div class="metric-value" id="f1Value">82%</div>
+                            </div>
+                            <div class="chart-container">
+                                <div class="chart-title">Specificity</div>
+                                <canvas id="specificityChart"></canvas>
+                                <div class="metric-value" id="specificityValue">88%</div>
+                            </div>
+                            <div class="chart-container">
+                                <div class="chart-title">Recall</div>
+                                <canvas id="recallChart"></canvas>
+                                <div class="metric-value" id="recallValue">79%</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
             <div class="results-card">
                 <div class="results-header">
