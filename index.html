@@ -44,6 +44,13 @@
     <!-- Main Content -->
     <main class="main-content">
         <!-- Home Page -->
+        <section id="home" class="page active">
+            <div class="page-content">
+                <div class="home-hero">
+                    <div class="hero-content">
+                        <div class="logo-central">
+                            <i class="fas fa-heartbeat"></i>
+                            <h1>Diabetes Predictor</h1>
 <!-- Home Page -->
 <section id="home" class="page active">
     <div class="page-content">
@@ -98,11 +105,22 @@
                             <div class="stat-main">Type 1</div>
                             <div class="stat-desc">Autoimmune condition</div>
                         </div>
+                        <h2>Machine Learning for Early Detection</h2>
+                        <p>Using advanced data science and machine learning algorithms to predict diabetes risk and enable early intervention.</p>
+                        <div class="hero-buttons">
+                            <a href="#calculator" class="btn btn-primary">
+                                <i class="fas fa-calculator"></i>
+                                Check Your Risk
+                            </a>
                         <div class="bubble-stat">
                             <div class="stat-main">Type 2</div>
                             <div class="stat-desc">Most common form (90%)</div>
                         </div>
                     </div>
+                    <div class="hero-stats">
+                        <div class="stat-card">
+                            <div class="stat-number">94%</div>
+                            <div class="stat-label">Accuracy</div>
                 </div>
 
                 <!-- Bubble 2: Global Statistics -->
@@ -117,10 +135,16 @@
                             <div class="stat-main">537M</div>
                             <div class="stat-desc">Adults with diabetes</div>
                         </div>
+                        <div class="stat-card">
+                            <div class="stat-number">5</div>
+                            <div class="stat-label">Clinical Features</div>
                         <div class="bubble-stat">
                             <div class="stat-main">1 in 10</div>
                             <div class="stat-desc">Adults affected</div>
                         </div>
+                        <div class="stat-card">
+                            <div class="stat-number">2</div>
+                            <div class="stat-label">ML Algorithms</div>
                         <div class="bubble-stat">
                             <div class="stat-main">6.7M</div>
                             <div class="stat-desc">Deaths per year</div>
@@ -128,11 +152,35 @@
                     </div>
                 </div>
 
+                <!-- Diabetes Info Bubbles Section -->
+                <div class="diabetes-info-bubbles">
+                    <div class="bubbles-header">
+                        <h2>Understanding Diabetes</h2>
+                        <p>Key facts and statistics about this global health challenge</p>
                 <!-- Bubble 3: Risk Factors -->
                 <div class="info-bubble">
                     <div class="bubble-icon">
                         <i class="fas fa-exclamation-triangle"></i>
                     </div>
+                    
+                    <div class="bubbles-container">
+                        <!-- Your existing bubble content remains the same -->
+                        <div class="info-bubble">
+                            <div class="bubble-icon">
+                                <i class="fas fa-info-circle"></i>
+                            </div>
+                            <h3>What is Diabetes?</h3>
+                            <p>A chronic disease that occurs when the pancreas cannot produce enough insulin or when the body cannot effectively use the insulin it produces, leading to elevated blood glucose levels.</p>
+                            <div class="bubble-stats">
+                                <div class="bubble-stat">
+                                    <div class="stat-main">Type 1</div>
+                                    <div class="stat-desc">Autoimmune condition</div>
+                                </div>
+                                <div class="bubble-stat">
+                                    <div class="stat-main">Type 2</div>
+                                    <div class="stat-desc">Most common form (90%)</div>
+                                </div>
+                            </div>
                     <h3>Key Risk Factors</h3>
                     <p>Several factors can increase your likelihood of developing Type 2 diabetes.</p>
                     <div class="risk-list">
@@ -152,14 +200,81 @@
                             <i class="fas fa-birthday-cake"></i>
                             <span>Age over 45</span>
                         </div>
+
+                        <!-- Add your other 4 bubbles here -->
                     </div>
                 </div>
+            </div>
+        </section>
 
+        <!-- Risk Calculator Page -->
+        <section id="calculator" class="page">
+            <div class="calculator-container">
+                <div class="page-header">
+                    <h2>Diabetes Risk Calculator</h2>
+                    <p>Enter your clinical information to assess diabetes risk</p>
+                </div>
+                
+                <div class="calculator-card">
+                    <div class="calculator-content">
+                        <form id="diabetesForm">
+                            <div class="form-group">
+                                <label for="pregnancies">Pregnancies:</label>
+                                <div class="input-with-icon">
+                                    <i class="fas fa-baby"></i>
+                                    <input type="number" id="pregnancies" name="pregnancies" min="0" max="20" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="glucose">Glucose (mg/dL):</label>
+                                <div class="input-with-icon">
+                                    <i class="fas fa-tint"></i>
+                                    <input type="number" id="glucose" name="glucose" min="0" max="300" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="bmi">BMI:</label>
+                                <div class="input-with-icon">
+                                    <i class="fas fa-weight"></i>
+                                    <input type="number" id="bmi" name="bmi" min="10" max="60" step="0.1" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="dpf">Diabetes Pedigree Function:</label>
+                                <div class="input-with-icon">
+                                    <i class="fas fa-dna"></i>
+                                    <input type="number" id="dpf" name="dpf" min="0" max="2.5" step="0.01" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="age">Age:</label>
+                                <div class="input-with-icon">
+                                    <i class="fas fa-birthday-cake"></i>
+                                    <input type="number" id="age" name="age" min="21" max="100" required>
+                                </div>
+                            </div>
+                            
+                            <button type="submit" class="submit-btn">
+                                <i class="fas fa-calculator"></i> Calculate Risk
+                            </button>
+                        </form>
                 <!-- Bubble 4: Projections -->
                 <div class="info-bubble">
                     <div class="bubble-icon">
                         <i class="fas fa-chart-line"></i>
                     </div>
+                </div>
+                
+                <div class="results-card">
+                    <div class="results-header">
+                        <h3>Risk Assessment Results</h3>
+                        <div class="risk-indicator">
+                            <div id="riskLevel" class="risk-level">Enter your data</div>
+                            <div id="riskScore" class="risk-probability">-</div>
                     <h3>Future Projections</h3>
                     <p>Diabetes prevalence is expected to continue rising significantly in the coming decades.</p>
                     <div class="projection-timeline">
@@ -167,6 +282,16 @@
                             <div class="year">2021</div>
                             <div class="cases">537M cases</div>
                         </div>
+                    </div>
+                    
+                    <div id="riskDescription" class="risk-description">
+                        <p>Fill out the form and click "Calculate Risk" to see your personalized assessment.</p>
+                    </div>
+                    
+                    <div class="recommendations">
+                        <h4><i class="fas fa-lightbulb"></i> Recommendations</h4>
+                        <div id="recommendationContent" class="recommendation-content">
+                            <p>Personalized recommendations will appear here after assessment.</p>
                         <div class="timeline-arrow">
                             <i class="fas fa-arrow-right"></i>
                         </div>
@@ -184,6 +309,9 @@
                     </div>
                 </div>
 
+                    <div id="loadingSpinner" style="display: none;">
+                        <div class="spinner"></div>
+                        <p style="margin-top: 10px; color: #666;">Analyzing your data...</p>
                 <!-- Bubble 5: Prevention -->
                 <div class="info-bubble">
                     <div class="bubble-icon">
@@ -211,6 +339,39 @@
     </div>
 </section>
 
+                <!-- Metrics Card -->
+                <div class="metrics-card">
+                    <div class="metrics-header">
+                        <h3><i class="fas fa-chart-pie"></i> Model Performance Analysis</h3>
+                        <p>Live metrics visualization based on your input data</p>
+                    </div>
+                    
+                    <div class="metrics-container">
+                        <div class="confusion-matrix">
+                            <h4>Prediction Distribution</h4>
+                            <div class="matrix-grid">
+                                <div class="matrix-cell header">Actual/Predicted</div>
+                                <div class="matrix-cell header">Diabetic</div>
+                                <div class="matrix-cell header">Non-Diabetic</div>
+                                
+                                <div class="matrix-cell header">Diabetic</div>
+                                <div class="matrix-cell true-positive" id="truePositive">45</div>
+                                <div class="matrix-cell false-negative" id="falseNegative">8</div>
+                                
+                                <div class="matrix-cell header">Non-Diabetic</div>
+                                <div class="matrix-cell false-positive" id="falsePositive">12</div>
+                                <div class="matrix-cell true-negative" id="trueNegative">135</div>
+                            </div>
+                            
+                            <div class="matrix-totals">
+                                <div class="total-item">
+                                    <span class="total-label">Total Predictions:</span>
+                                    <span class="total-value" id="totalPredictions">200</span>
+                                </div>
+                                <div class="total-item">
+                                    <span class="total-label">Correct Predictions:</span>
+                                    <span class="total-value" id="correctPredictions">180</span>
+                                </div>
         <!-- Risk Calculator Page -->
      <!DOCTYPE html>
 <html lang="en">
@@ -504,6 +665,27 @@
                                 <input type="number" id="pregnancies" name="pregnancies" min="0" max="20" required>
                             </div>
                         </div>
+                        
+                        <div class="pie-charts-container">
+                            <div class="pie-chart-section">
+                                <h4>Accuracy Breakdown</h4>
+                                <div class="pie-chart-wrapper">
+                                    <div class="pie-chart" id="accuracyPieChart">
+                                        <div class="pie-center">
+                                            <span class="pie-value" id="accuracyPieValue">90%</span>
+                                        </div>
+                                    </div>
+                                    <div class="pie-legend">
+                                        <div class="legend-item">
+                                            <span class="legend-color" style="background: #06D6A0;"></span>
+                                            <span class="legend-label">Correct (180)</span>
+                                        </div>
+                                        <div class="legend-item">
+                                            <span class="legend-color" style="background: #EF476F;"></span>
+                                            <span class="legend-label">Incorrect (20)</span>
+                                        </div>
+                                    </div>
+                                </div>
 
                         <div class="form-group">
                             <label for="glucose">Glucose (mg/dL):</label>
@@ -511,6 +693,26 @@
                                 <i class="fas fa-tint"></i>
                                 <input type="number" id="glucose" name="glucose" min="0" max="300" required>
                             </div>
+                            
+                            <div class="pie-chart-section">
+                                <h4>Precision Analysis</h4>
+                                <div class="pie-chart-wrapper">
+                                    <div class="pie-chart" id="precisionPieChart">
+                                        <div class="pie-center">
+                                            <span class="pie-value" id="precisionPieValue">79%</span>
+                                        </div>
+                                    </div>
+                                    <div class="pie-legend">
+                                        <div class="legend-item">
+                                            <span class="legend-color" style="background: #2E86AB;"></span>
+                                            <span class="legend-label">True Positives (45)</span>
+                                        </div>
+                                        <div class="legend-item">
+                                            <span class="legend-color" style="background: #FFD166;"></span>
+                                            <span class="legend-label">False Positives (12)</span>
+                                        </div>
+                                    </div>
+                                </div>
                         </div>
 
                         <div class="form-group">
@@ -519,6 +721,26 @@
                                 <i class="fas fa-weight"></i>
                                 <input type="number" id="bmi" name="bmi" min="10" max="60" step="0.1" required>
                             </div>
+                            
+                            <div class="pie-chart-section">
+                                <h4>Recall Analysis</h4>
+                                <div class="pie-chart-wrapper">
+                                    <div class="pie-chart" id="recallPieChart">
+                                        <div class="pie-center">
+                                            <span class="pie-value" id="recallPieValue">85%</span>
+                                        </div>
+                                    </div>
+                                    <div class="pie-legend">
+                                        <div class="legend-item">
+                                            <span class="legend-color" style="background: #FF9E64;"></span>
+                                            <span class="legend-label">True Positives (45)</span>
+                                        </div>
+                                        <div class="legend-item">
+                                            <span class="legend-color" style="background: #EF476F;"></span>
+                                            <span class="legend-label">False Negatives (8)</span>
+                                        </div>
+                                    </div>
+                                </div>
                         </div>
 
                         <div class="form-group">
@@ -527,6 +749,26 @@
                                 <i class="fas fa-dna"></i>
                                 <input type="number" id="dpf" name="dpf" min="0" max="2.5" step="0.01" required>
                             </div>
+                            
+                            <div class="pie-chart-section">
+                                <h4>F1-Score Balance</h4>
+                                <div class="pie-chart-wrapper">
+                                    <div class="pie-chart" id="f1PieChart">
+                                        <div class="pie-center">
+                                            <span class="pie-value" id="f1PieValue">82%</span>
+                                        </div>
+                                    </div>
+                                    <div class="pie-legend">
+                                        <div class="legend-item">
+                                            <span class="legend-color" style="background: #9B59B6;"></span>
+                                            <span class="legend-label">Precision (79%)</span>
+                                        </div>
+                                        <div class="legend-item">
+                                            <span class="legend-color" style="background: #8E44AD;"></span>
+                                            <span class="legend-label">Recall (85%)</span>
+                                        </div>
+                                    </div>
+                                </div>
                         </div>
 
                         <div class="form-group">
@@ -569,6 +811,7 @@
                     <p style="margin-top: 10px; color: #666;">Analyzing your data...</p>
                 </div>
             </div>
+        </section>
         </div>
     </section>
 
@@ -661,8 +904,10 @@
                     <h2>About Diabetes Predictor</h2>
                     <p>Learn about our mission and methodology</p>
                 </div>
+                
 
                 <div class="about-content">
+                    <!-- Your about cards remain the same -->
                     <div class="about-card">
                         <div class="about-icon">
                             <i class="fas fa-bullseye"></i>
