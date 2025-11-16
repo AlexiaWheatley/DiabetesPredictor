@@ -318,3 +318,5 @@ function showPage(pageId) {
         sidebar.classList.remove('active');
     }
 }
+
+//back to working mode
