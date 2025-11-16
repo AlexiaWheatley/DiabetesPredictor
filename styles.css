@@ -260,14 +260,12 @@ body {
         gap: 2rem;
         text-align: center;
     }
-    
 
     .hero-stats {
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: center;
     }
-    
 
     .stat-card {
         flex: 1;
@@ -279,7 +277,6 @@ body {
     .hero-stats {
         flex-direction: column;
     }
-    
 
     .stat-card {
         width: 100%;
@@ -542,43 +539,36 @@ body {
     .sidebar {
         width: 100%;
     }
-    
 
     .home-hero {
         grid-template-columns: 1fr;
         gap: 2rem;
         text-align: center;
     }
-    
 
     .calculator-container {
         grid-template-columns: 1fr;
     }
-    
 
     .hero-stats {
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: center;
     }
-    
 
     .stat-card {
         flex: 1;
         min-width: 150px;
     }
-    
 
     .hero-buttons {
         flex-direction: column;
         align-items: center;
     }
-    
 
     .btn {
         width: 200px;
     }
-    
 
     .page {
         padding: 1rem;
@@ -589,17 +579,14 @@ body {
     .hero-stats {
         flex-direction: column;
     }
-    
 
     .stat-card {
         width: 100%;
     }
-    
 
     .logo-central h1 {
         font-size: 1.8rem;
     }
-    
 
     .hero-content h2 {
         font-size: 1.3rem;
@@ -806,12 +793,10 @@ body {
         width: 95%;
         padding: 20px;
     }
-    
 
     .action-buttons {
         flex-direction: column;
     }
-    
 
     .recommendation-list {
         grid-template-columns: 1fr;
@@ -1086,44 +1071,36 @@ body {
         gap: 2rem;
         padding: 0 1rem;
     }
-    
 
     .global-stats {
         grid-template-columns: 1fr;
     }
-    
 
     .projection-cards {
         flex-direction: column;
     }
-    
 
     .projection-arrow {
         transform: rotate(90deg);
     }
-    
 
     .factors-grid {
         grid-template-columns: 1fr;
     }
-    
 
     .detection-stats {
         grid-template-columns: 1fr;
     }
-    
 
     .diabetes-info {
         margin: 2rem 0;
         padding: 2rem 0;
     }
-    
 
     .early-detection {
         margin: 0 1rem;
         padding: 2rem 1rem;
     }
-    
 
     .risk-factors {
         padding: 0 1rem;
@@ -1134,12 +1111,10 @@ body {
     .info-header h2 {
         font-size: 2rem;
     }
-    
 
     .global-stat-card {
         padding: 1rem;
     }
-    
 
     .factor-card {
         padding: 1.5rem 1rem;
@@ -1359,29 +1334,24 @@ body {
     .bubbles-container {
         grid-template-columns: 1fr;
     }
-    
 
     .diabetes-info-bubbles {
         padding: 2rem 1rem;
         margin: 2rem 0;
     }
-    
 
     .bubbles-header h2 {
         font-size: 2rem;
     }
-    
 
     .info-bubble {
         padding: 1.5rem;
     }
-    
 
     .projection-timeline {
         flex-direction: column;
         gap: 0.5rem;
     }
-    
 
     .timeline-arrow {
         transform: rotate(90deg);
@@ -1392,12 +1362,10 @@ body {
     .bubble-stats {
         grid-template-columns: 1fr;
     }
-    
 
     .bubbles-header h2 {
         font-size: 1.8rem;
     }
-    
 
     .info-bubble h3 {
         font-size: 1.2rem;
@@ -1602,29 +1570,24 @@ body {
     .bubbles-container {
         grid-template-columns: 1fr;
     }
-    
 
     .diabetes-info-bubbles {
         padding: 2rem 1rem;
         margin: 2rem 0;
     }
-    
 
     .bubbles-header h2 {
         font-size: 2rem;
     }
-    
 
     .info-bubble {
         padding: 1.5rem;
     }
-    
 
     .projection-timeline {
         flex-direction: column;
         gap: 0.5rem;
     }
-    
 
     .timeline-arrow {
         transform: rotate(90deg);
@@ -1635,12 +1598,10 @@ body {
     .bubble-stats {
         grid-template-columns: 1fr;
     }
-    
 
     .bubbles-header h2 {
         font-size: 1.8rem;
     }
-    
 
     .info-bubble h3 {
         font-size: 1.2rem;
@@ -1666,508 +1627,3 @@ body {
     border-left-color: #EF476F;
 }
 </style>
-
-* Pie Charts Container */
-.pie-charts-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-}
-
-.pie-chart-section {
-    background: var(--white);
-    padding: 15px;
-    border-radius: 10px;
-    border: 2px solid var(--light-blue);
-    text-align: center;
-}
-
-.pie-chart-section h4 {
-    color: var(--dark-blue);
-    margin-bottom: 15px;
-    font-size: 16px;
-    font-weight: 600;
-}
-
-.pie-chart-wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-}
-
-/* Pie Chart Styles */
-.pie-chart {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    position: relative;
-    background: conic-gradient(
-        var(--color) calc(var(--percentage) * 360deg),
-        transparent 0
-    );
-}
-
-.pie-chart::before {
-    content: '';
-    position: absolute;
-    width: 70px;
-    height: 70px;
-    background: var(--white);
-    border-radius: 50%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-}
-
-.pie-center {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    z-index: 2;
-}
-
-.pie-value {
-    font-size: 14px;
-    font-weight: 700;
-    color: var(--dark-blue);
-}
-
-/* Pie Chart Segments - Using conic-gradient with CSS variables */
-.pie-chart.multi-segment {
-    background: conic-gradient(
-        var(--color1) calc(var(--percentage1) * 360deg),
-        var(--color2) 0 calc((var(--percentage1) + var(--percentage2)) * 360deg),
-        var(--color3) 0 calc((var(--percentage1) + var(--percentage2) + var(--percentage3)) * 360deg),
-        var(--color4) 0
-    );
-}
-
-/* Pie Legend */
-.pie-legend {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    width: 100%;
-}
-
-.legend-item {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 12px;
-}
-
-.legend-color {
-    width: 12px;
-    height: 12px;
-    border-radius: 3px;
-    flex-shrink: 0;
-}
-
-.legend-label {
-    color: var(--medium-gray);
-    font-weight: 500;
-}
-
-/* Matrix Totals */
-.matrix-totals {
-    margin-top: 15px;
-    padding-top: 15px;
-    border-top: 1px solid var(--light-blue);
-    display: flex;
-    justify-content: space-between;
-    gap: 15px;
-}
-
-.total-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    flex: 1;
-}
-
-.total-label {
-    font-size: 12px;
-    color: var(--medium-gray);
-    margin-bottom: 4px;
-}
-
-.total-value {
-    font-size: 16px;
-    font-weight: 700;
-    color: var(--dark-blue);
-}
-
-/* Metric Explanation */
-.metric-explanation {
-    grid-column: 1 / -1;
-    background: var(--white);
-    padding: 20px;
-    border-radius: 10px;
-    border-left: 4px solid var(--primary-blue);
-    margin-top: 20px;
-}
-
-.metric-explanation h5 {
-    color: var(--dark-blue);
-    margin-bottom: 12px;
-    font-size: 16px;
-    text-align: center;
-}
-
-.metric-explanation-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 15px;
-}
-
-.metric-definition {
-    padding: 10px;
-    background: var(--light-gray);
-    border-radius: 6px;
-    border-left: 3px solid var(--primary-blue);
-}
-
-.metric-definition h6 {
-    color: var(--dark-blue);
-    margin-bottom: 5px;
-    font-size: 14px;
-}
-
-.metric-definition p {
-    color: var(--medium-gray);
-    font-size: 12px;
-    line-height: 1.4;
-    margin: 0;
-}
-
-/* Mobile Responsive for Pie Charts */
-@media (max-width: 1024px) {
-    .pie-charts-container {
-        grid-template-columns: 1fr;
-    }
-    
-    .pie-chart-section {
-        padding: 12px;
-    }
-    
-    .pie-chart {
-        width: 100px;
-        height: 100px;
-    }
-    
-    .pie-chart::before {
-        width: 60px;
-        height: 60px;
-    }
-    
-    .pie-value {
-        font-size: 12px;
-    }
-}
-
-@media (max-width: 768px) {
-    .metrics-container {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-    
-    .pie-charts-container {
-        grid-template-columns: 1fr 1fr;
-    }
-    
-    .metric-explanation-content {
-        grid-template-columns: 1fr;
-    }
-    
-    .matrix-totals {
-        flex-direction: column;
-        gap: 10px;
-    }
-}
-
-@media (max-width: 480px) {
-    .pie-charts-container {
-        grid-template-columns: 1fr;
-    }
-    
-    .pie-chart {
-        width: 90px;
-        height: 90px;
-    }
-    
-    .pie-chart::before {
-        width: 50px;
-        height: 50px;
-    }
-    
-    .legend-item {
-        font-size: 11px;
-    }
-}
-
-/* Calculator Container */
-.calculator-container {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-/* Calculator Card */
-.calculator-card {
-    background: var(--white);
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    padding: 30px;
-    width: 100%;
-    margin-bottom: 30px;
-}
-
-.calculator-content {
-    display: flex;
-    flex-direction: column;
-}
-
-#diabetesForm {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-}
-
-.form-group {
-    display: flex;
-    flex-direction: column;
-}
-
-.input-with-icon {
-    display: flex;
-    align-items: center;
-    position: relative;
-}
-
-.input-with-icon i {
-    position: absolute;
-    left: 15px;
-    font-size: 18px;
-    color: var(--primary-blue);
-    z-index: 1;
-}
-
-.form-group label {
-    margin-bottom: 8px;
-    color: var(--dark-blue);
-    font-weight: 600;
-    font-size: 16px;
-}
-
-.form-group input {
-    width: 100%;
-    padding: 12px 15px 12px 45px;
-    border: 2px solid #e0e0e0;
-    border-radius: 10px;
-    font-size: 16px;
-    transition: all 0.3s;
-}
-
-.form-group input:focus {
-    border-color: var(--primary-blue);
-    outline: none;
-    box-shadow: 0 0 0 3px rgba(46, 134, 171, 0.2);
-}
-
-.submit-btn {
-    grid-column: span 2;
-    background: var(--primary-blue);
-    color: white;
-    border: none;
-    padding: 15px 30px;
-    font-size: 18px;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: all 0.3s;
-    margin-top: 10px;
-    font-weight: 600;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.submit-btn i {
-    margin-right: 10px;
-}
-
-.submit-btn:hover {
-    background: var(--dark-blue);
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(46, 134, 171, 0.4);
-}
-
-/* Results Card */
-.results-card {
-    background: var(--white);
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    padding: 30px;
-    width: 100%;
-    margin-bottom: 30px;
-}
-
-.results-header {
-    text-align: center;
-    margin-bottom: 20px;
-    padding-bottom: 20px;
-    border-bottom: 1px solid #eee;
-}
-
-.results-header h3 {
-    color: var(--dark-blue);
-    font-size: 24px;
-    margin-bottom: 15px;
-}
-
-.risk-indicator {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.risk-level {
-    font-size: 24px;
-    font-weight: 700;
-    padding: 10px 20px;
-    border-radius: 10px;
-    background: var(--light-gray);
-    color: var(--medium-gray);
-}
-
-.risk-probability {
-    font-size: 28px;
-    font-weight: 700;
-    color: var(--dark-blue);
-}
-
-.risk-description {
-    margin-bottom: 25px;
-    padding: 15px;
-    background: var(--light-gray);
-    border-radius: 10px;
-    color: var(--medium-gray);
-    line-height: 1.6;
-}
-
-.recommendations {
-    margin-top: 25px;
-    padding-top: 25px;
-    border-top: 1px solid #eee;
-}
-
-.recommendations h4 {
-    color: var(--dark-blue);
-    margin-bottom: 15px;
-    font-size: 20px;
-    display: flex;
-    align-items: center;
-}
-
-.recommendations h4 i {
-    color: var(--warning);
-    margin-right: 10px;
-}
-
-.recommendation-content {
-    background: var(--light-gray);
-    padding: 15px;
-    border-radius: 10px;
-    color: var(--medium-gray);
-    line-height: 1.6;
-}
-
-.recommendation-content ul {
-    padding-left: 20px;
-}
-
-.recommendation-content li {
-    margin-bottom: 8px;
-}
-
-.low-risk {
-    color: var(--success);
-    background: rgba(6, 214, 160, 0.1) !important;
-}
-
-.medium-risk {
-    color: var(--warning);
-    background: rgba(255, 209, 102, 0.1) !important;
-}
-
-.high-risk {
-    color: var(--danger);
-    background: rgba(239, 71, 111, 0.1) !important;
-}
-
-#loadingSpinner {
-    text-align: center;
-    padding: 20px;
-}
-
-.spinner {
-    border: 4px solid #f3f3f3;
-    border-top: 4px solid var(--primary-blue);
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    animation: spin 2s linear infinite;
-    margin: 0 auto;
-}
-
-@keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
-
-/* Metrics Card Styles */
-.metrics-card {
-    background: var(--white);
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    padding: 30px;
-    width: 100%;
-}
-
-.metrics-header {
-    text-align: center;
-    margin-bottom: 25px;
-    padding-bottom: 15px;
-    border-bottom: 2px solid var(--light-gray);
-}
-
-.metrics-header h3 {
-    color: var(--dark-blue);
-    font-size: 24px;
-    margin-bottom: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-}
-
-.metrics-header p {
-    color: var(--medium-gray);
-    font-size: 16px;
-}
-
-.metrics-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
-    align-items: start;
-}
-
-/*Back to working mode */
